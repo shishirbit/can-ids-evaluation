@@ -1,0 +1,360 @@
+{
+  "_provenance": "Every value below was produced by the script named in its 'src' field and is quoted in README.md. Figures and tables in paper/cs_submission read from this file so that text, tables and plots cannot drift apart.",
+  "road_models": {
+    "src": "scripts/compare_models.py (5 seeds, 200-point threshold grid, 3-of-5 rule, duty<=2%), scripts/event_curve.py (single-seed baselines)",
+    "n_events": 29,
+    "rows": [
+      {
+        "model": "Rate exceedance (unsupervised)",
+        "params": null,
+        "at5": 3.0,
+        "at5_sd": 0.0,
+        "at30": 3.0,
+        "at30_sd": 0.0,
+        "seeds": 1
+      },
+      {
+        "model": "Payload novelty (unsupervised)",
+        "params": null,
+        "at5": 0.0,
+        "at5_sd": 0.0,
+        "at30": 0.0,
+        "at30_sd": 0.0,
+        "seeds": 1
+      },
+      {
+        "model": "Window GBDT",
+        "params": null,
+        "at5": 20.0,
+        "at5_sd": 0.0,
+        "at30": 20.0,
+        "at30_sd": 0.0,
+        "seeds": 1
+      },
+      {
+        "model": "Graph attention + payload",
+        "params": 1047952,
+        "at5": 22.4,
+        "at5_sd": 7.8,
+        "at30": 26.8,
+        "at30_sd": 0.4,
+        "seeds": 5
+      },
+      {
+        "model": "ConvGRU (raw frames)",
+        "params": 97889,
+        "at5": 26.2,
+        "at5_sd": 1.2,
+        "at30": 27.0,
+        "at30_sd": 0.0,
+        "seeds": 5
+      },
+      {
+        "model": "ConvGRU + payload novelty",
+        "params": 97889,
+        "at5": 26.2,
+        "at5_sd": 1.0,
+        "at30": 27.0,
+        "at30_sd": 0.0,
+        "seeds": 5
+      }
+    ],
+    "tests": {
+      "convgru_vs_convgru_payload_p": 1.0,
+      "sttf_vs_convgru_p_at5": 0.81,
+      "sttf_vs_convgru_p_at30": 0.42,
+      "ceiling": 27,
+      "undetected": [
+        "max_engine_coolant_temp_attack",
+        "max_engine_coolant_temp_attack_masquerade"
+      ]
+    }
+  },
+  "tiers": {
+    "src": "scripts/detect_road.py (window-F1 threshold, folds pooled)",
+    "rows": [
+      {
+        "detector": "Rate exceedance",
+        "value_detected": 15,
+        "value_total": 17,
+        "context_detected": 10,
+        "context_total": 12,
+        "auc": 0.753
+      },
+      {
+        "detector": "Payload novelty",
+        "value_detected": 17,
+        "value_total": 17,
+        "context_detected": 0,
+        "context_total": 12,
+        "auc": 0.681
+      },
+      {
+        "detector": "Window GBDT",
+        "value_detected": 15,
+        "value_total": 17,
+        "context_detected": 12,
+        "context_total": 12,
+        "auc": 0.882
+      }
+    ]
+  },
+  "latency": {
+    "src": "scripts/compare_models.py + operating.event_detection (ConvGRU+payload, 5 seeds, <=5 FA/h)",
+    "rows": [
+      {
+        "rule": "1-of-1",
+        "events": 16.2,
+        "sd": 13.2,
+        "latency_ms": 0,
+        "note": "no feasible threshold for 2/5 seeds"
+      },
+      {
+        "rule": "2-of-3",
+        "events": 21.2,
+        "sd": 10.6,
+        "latency_ms": 112,
+        "note": "1/5 seeds infeasible"
+      },
+      {
+        "rule": "3-of-5",
+        "events": 26.2,
+        "sd": 1.0,
+        "latency_ms": 220,
+        "note": "stable"
+      }
+    ]
+  },
+  "carhacking": {
+    "src": "scripts/preprocess_car_hacking.py, scripts/train_sttf.py",
+    "preonset_auc": {
+      "horizons_s": [
+        1,
+        2,
+        5
+      ],
+      "graph_net_fuzzy": [
+        0.851,
+        0.877,
+        0.847
+      ],
+      "timer_fuzzy": [
+        1.0,
+        0.996,
+        0.988
+      ],
+      "graph_net_all": [
+        0.901,
+        0.84,
+        0.694
+      ],
+      "nograph_all": [
+        0.967,
+        0.962,
+        0.933
+      ],
+      "timer_all": [
+        0.98,
+        0.924,
+        0.856
+      ]
+    },
+    "detection_f1": 0.9997,
+    "detection_auc": 1.0,
+    "duplicate_frames": 891068,
+    "duplicate_seconds": 481.6,
+    "recording_gap_s": 2540
+  },
+  "cross_vehicle": {
+    "src": "scripts/id_agnostic.py (3 seeds), scripts/cross_vehicle.py (ID-based)",
+    "budget": 5,
+    "pairs": {
+      "Impala->Silverado": {
+        "events": 8,
+        "idbased": 0,
+        "residual": 2.7,
+        "residual_sd": 0.5,
+        "relative": 6.3,
+        "relative_sd": 1.7
+      },
+      "Traverse->Forester": {
+        "events": 12,
+        "idbased": 0,
+        "residual": 12.0,
+        "residual_sd": 0.0,
+        "relative": 12.0,
+        "relative_sd": 0.0
+      },
+      "Silverado->Forester": {
+        "events": 10,
+        "idbased": 0,
+        "residual": 10.0,
+        "residual_sd": 0.0,
+        "relative": 10.0,
+        "relative_sd": 0.0
+      },
+      "Forester->Traverse": {
+        "events": 14,
+        "idbased": 0,
+        "residual": 5.7,
+        "residual_sd": 0.5,
+        "relative": 6.0,
+        "relative_sd": 0.0
+      }
+    },
+    "totals": {
+      "events": 44,
+      "idbased": 0,
+      "residual": 30.3,
+      "relative": 34.3,
+      "both_concat": 23.3
+    },
+    "masquerade": {
+      "events": 26,
+      "residual": 10.3,
+      "relative": 4.7
+    },
+    "concat_at30_pct": 60
+  },
+  "adaptation": {
+    "src": "scripts/per_vehicle_calib.py (Impala->Silverado, budget honoured on test)",
+    "rows": [
+      {
+        "minutes": 0,
+        "at5": 0,
+        "at30": 0,
+        "events": 8
+      },
+      {
+        "minutes": 1,
+        "at5": 0,
+        "at30": 0,
+        "events": 8
+      },
+      {
+        "minutes": 5,
+        "at5": 0,
+        "at30": 1,
+        "events": 8
+      },
+      {
+        "minutes": 15,
+        "at5": 0,
+        "at30": 0,
+        "events": 8
+      }
+    ]
+  },
+  "pair": {
+    "src": "scripts/pair_detector.py --branches rel+res (4 pairs x 2 seeds)",
+    "unknown_events": 88,
+    "masquerade_events": 52,
+    "rows": [
+      {
+        "branch": "ID-relative",
+        "unknown_at5": 59,
+        "unknown_at30": 62,
+        "masq_at5": 10,
+        "masq_at30": 16,
+        "fa_at5": 1.2
+      },
+      {
+        "branch": "Residualisation",
+        "unknown_at5": 61,
+        "unknown_at30": 63,
+        "masq_at5": 19,
+        "masq_at30": 25,
+        "fa_at5": 1.3
+      },
+      {
+        "branch": "OR of both",
+        "unknown_at5": 71,
+        "unknown_at30": 73,
+        "masq_at5": 20,
+        "masq_at30": 27,
+        "fa_at5": 0.3
+      }
+    ]
+  },
+  "cost": {
+    "src": "scripts/ecu_cost.py (1 CPU thread, batch 1)",
+    "rows": [
+      {
+        "model": "ConvGRU + payload",
+        "params": 97889,
+        "int8_mb": 0.1,
+        "median_ms": 1.35,
+        "p99_ms": 1.69,
+        "rate_hz": 150,
+        "duty": 0.202
+      },
+      {
+        "model": "Graph attention",
+        "params": 1047952,
+        "int8_mb": 1.05,
+        "median_ms": 38.9,
+        "p99_ms": 70.1,
+        "rate_hz": 10,
+        "duty": 0.389
+      },
+      {
+        "model": "Graph attention + 50 MC passes",
+        "params": 1047952,
+        "int8_mb": 1.05,
+        "median_ms": 1945.4,
+        "p99_ms": 3507.4,
+        "rate_hz": 10,
+        "duty": 19.45
+      }
+    ],
+    "feature_extraction_duty": {
+      "graph": 0.0018,
+      "payload": 0.0012
+    }
+  },
+  "traps": {
+    "src": "README.md 'Findings so far'; each entry names the script",
+    "rows": [
+      {
+        "choice": "Threshold-grid resolution",
+        "coarse": "60 candidates: payload features +4.2 events, p=0.029",
+        "fine": "200 candidates: p=1.000, identical event sets"
+      },
+      {
+        "choice": "Seed count",
+        "coarse": "3 seeds: graph attention +11 events",
+        "fine": "5 seeds: p=0.81"
+      },
+      {
+        "choice": "Duty cap in threshold selection",
+        "coarse": "absent: 29/29 events at 29 FA/h",
+        "fine": "present: alarm must clear, 27/29 at 28 FA/h"
+      },
+      {
+        "choice": "Duty cap on reported metrics",
+        "coarse": "absent: 8/8 events on an unseen vehicle",
+        "fine": "present: alarm active 99.9% of time, 0/8"
+      },
+      {
+        "choice": "Held-out normal traffic",
+        "coarse": "time slices of same drives: 60/h budget",
+        "fine": "whole held-out drives: 1244-2866/h measured"
+      }
+    ]
+  },
+  "threshold_transfer": {
+    "src": "scripts/aggregate_road.py operating tables, STTF graph, 3-of-5 rule; v2 = time-sliced ambient, v3 = whole held-out drives",
+    "budgets": [
+      10,
+      60
+    ],
+    "time_sliced_measured": [
+      357.0,
+      1388.9
+    ],
+    "whole_drive_measured": [
+      28.3,
+      66.6
+    ]
+  }
+}

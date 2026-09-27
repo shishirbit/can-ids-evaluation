@@ -1,41 +1,57 @@
 # Overleaf package — Computers & Security submission
 
 ## Compile
-1. Upload this whole folder (or the zip) to Overleaf → "New Project" → "Upload Project".
-2. Set the main document to `main.tex`, compiler **pdfLaTeX**.
-3. Compile order is handled by Overleaf (pdfLaTeX → BibTeX → pdfLaTeX ×2). `elsarticle.cls` and
-   `elsarticle-harv.bst` ship with Overleaf's TeX Live; nothing needs installing.
+1. Upload this folder (or the zip) to Overleaf → "New Project" → "Upload Project".
+2. Main document `main.tex`, compiler **pdfLaTeX**.
+3. Overleaf runs pdfLaTeX → BibTeX → pdfLaTeX ×2 automatically. `elsarticle.cls`,
+   `elsarticle-harv.bst`, `algorithm`, `algpseudocode`, `siunitx` and `booktabs` all ship with
+   Overleaf's TeX Live; nothing needs installing.
 
 ## Contents
 ```
-main.tex                 manuscript (elsarticle, preprint, author-year)
-refs.bib                 bibliography
-figs/carhacking_schedule.pdf   Fig. 1  attack schedule + timer-vs-model forecasting
-figs/road_event_curves.pdf     Fig. 2  events detected vs false alarms/h on ROAD
-figs/cross_vehicle.pdf         Fig. 3  cross-vehicle transfer per representation
-figs/pair_union.pdf            Fig. 4  paired ID-agnostic detectors
+main.tex     manuscript (elsarticle, preprint, author-year)
+refs.bib     32 references, all cited
+figs/        10 figures, all generated from experiment outputs (no hand-drawn diagrams, no TikZ)
 ```
-Figures are regenerated from the experiment outputs by `scripts/make_figures.py` in the project
-root; they are not hand-drawn.
+
+| Figure | File | Shows |
+|---|---|---|
+| 1 | architecture.pdf | full system architecture: framing, two ID-agnostic branches, detectors, alarm logic, calibration path, evaluation harness |
+| 2 | carhacking_schedule.pdf | Car-Hacking attack schedule + timer-vs-graph-network forecasting |
+| 3 | model_comparison.pdf | events detected at two budgets, all models, 5 seeds |
+| 4 | road_event_curves.pdf | events vs false alarms/h trade-off on ROAD |
+| 5 | latency_tiers.pdf | latency by alarm rule; detection by attack tier |
+| 6 | threshold_transfer.pdf | requested vs achieved false-alarm rate under two calibration protocols |
+| 7 | cross_vehicle.pdf | cross-vehicle transfer per representation, four pairs |
+| 8 | adaptation.pdf | unlabelled target-vehicle adaptation (0/1/5/15 min) |
+| 9 | pair_union.pdf | paired detector vs individual branches |
+| 10 | ablation.pdf | detector ablation (ROAD) and representation ablation (cross-vehicle) |
+
+Tables 1–11 cover: corpora properties, reporting practice of related work, corpora as used,
+notation, ROAD results, latency by alarm rule, the five evaluation traps, cross-vehicle results,
+paired detector, ablations, and inference cost.
+
+## Sections
+Introduction (~990 words) · Related work (~1450 words, 2 tables) · Threat model · System
+architecture (Fig. 1) · Mathematical modelling (notation table, Eqs. 1–8) · Proposed algorithms
+(Algorithms 1–3) · Datasets · Experimental setup · Results (benchmarks, traps, cross-vehicle, paired
+detector, ablation, cost) · Discussion · Reproducibility · Conclusion · Declarations.
+
+## Reproducibility
+Code and result summaries: **https://github.com/shishirbit/can-ids-evaluation** (public).
+Every number in the manuscript is recorded in `experiments/paper_numbers.json` in that repository
+together with the script that produced it; the figures are generated from that file by
+`scripts/make_figures.py` and `scripts/make_figures2.py`, so text, tables and plots cannot diverge.
 
 ## Before you submit — please check
-* **Bibliography completeness.** `refs.bib` has verified authors/titles/venues/years, but several
-  entries lack volume, pages or DOI (marked in the file header). Complete them from the publisher
-  records. Two recent entries (`khreasat2026relational`, `hegde2026residualization`) use
-  "and others" where the full author list was not in the indexed record.
-* **Journal fit.** Written for *Computers & Security* (Elsevier). Switching to *Vehicular
-  Communications* needs only the `\journal{}` line changed; both use `elsarticle`.
-  The Taylor & Francis `interact.cls` template you supplied is for T&F journals
-  (e.g. Transportmetrica B), whose scope is transport dynamics rather than in-vehicle security —
-  see the note in the covering message.
-* **Author block, ORCID, funding, acknowledgements** are placeholders.
-* **Word limits / structured abstract**: not applied, because the publisher's author instructions
-  page could not be retrieved automatically. Verify abstract length (currently ~300 words) and any
-  required declarations against the live guide for authors.
-* **Anonymisation**: the data-availability statement contains a placeholder repository URL.
-
-## Numbers in the manuscript
-Every figure and table value comes from files under `experiments/` in the project root
-(`event_curves.md`, `vehicle_pairs.json`, `ecu_cost.json`, `road_detectors_v4/summary.json`,
-`per_vehicle_calib/plain_s0.json`, `pair_detector/*.json`, `id_agnostic/*.json`). The README in the
-project root maps each claim to the script that produced it.
+* **Bibliography completeness.** Authors/titles/venues/years are taken from indexed records. Several
+  2025–2026 entries lack volume/pages/DOI and a few use "and others" where the indexed record did
+  not expose the full author list. Complete them from the publisher records.
+* **Author block, ORCIDs, funding, acknowledgements** are placeholders.
+* **Journal fit.** Written for *Computers & Security*; switching to *Vehicular Communications* needs
+  only the `\journal{}` line. The Taylor & Francis `interact.cls` template supplied earlier targets
+  T&F journals (e.g. Transportmetrica B), whose scope is transport dynamics rather than in-vehicle
+  security.
+* **Anonymisation.** If the journal requires double-blind review, remove the GitHub URL from
+  Sections "Reproducibility" and "Data availability" and replace with an anonymised link.
+* **Abstract length** is ~330 words; check the journal limit (commonly 250).
