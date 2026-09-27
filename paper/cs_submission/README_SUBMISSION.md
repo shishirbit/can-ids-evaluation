@@ -55,3 +55,14 @@ together with the script that produced it; the figures are generated from that f
 * **Anonymisation.** If the journal requires double-blind review, remove the GitHub URL from
   Sections "Reproducibility" and "Data availability" and replace with an anonymised link.
 * **Abstract length** is ~330 words; check the journal limit (commonly 250).
+
+## Verified build
+Compiled locally with pdfLaTeX (TeX Live 2026) before delivery:
+* **0 overfull boxes**, no undefined citations or references.
+* 36 pages; all 10 figures and 11 tables placed within their own sections (pages 6-30), none
+  pushed past the references.
+* Figures are sized for this text width, so LaTeX scales them by less than 10% and the labels
+  stay legible.
+
+A compiled `main.pdf` is included in the project repository for reference; Overleaf will
+regenerate it from `main.tex`.

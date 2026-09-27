@@ -6,6 +6,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{algorithm}
@@ -16,6 +19,14 @@
 \usepackage{siunitx}
 \sisetup{detect-all, per-mode=symbol}
 
+\usepackage[section]{placeins}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.5}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.75}
 \journal{Computers \& Security}
 
 \newcommand{\phirel}{\phi^{\mathrm{rel}}}
@@ -214,21 +225,22 @@ with masquerade and suspension variants. \citet{le2026cicio} study CICIoV2024 an
 redundant frames are removed, deep models fail to generalise -- evidence that some reported gains
 reflect data redundancy rather than detection ability.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Public CAN corpora used or discussed in this work. ``Events'' counts labelled injection
 episodes rather than frames. Properties relevant to our protocol are marked.}
 \label{tab:datasets-related}
-\small
-\begin{tabular}{lccccc}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.17\linewidth}C{0.06\linewidth}L{0.21\linewidth}C{0.10\linewidth}C{0.10\linewidth}C{0.09\linewidth}@{}}
 \toprule
-Corpus & Vehicles & Attack style & Regular schedule & Masquerade & Cross-vehicle split\\
+Corpus & Veh. & Attack style & \shortstack{Fixed\\schedule} & \shortstack{Masq-\\uerade} & \shortstack{Vehicle\\split}\\
 \midrule
-Car-Hacking \citep{song2020dcnn}        & 1 & fabrication & yes (\SI{3.0}{\second} gaps) & no & no\\
-Survival Analysis \citep{han2018survival} & 3 & fabrication & yes & no & partial\\
-ROAD \citep{verma2024road}              & 1 & fabrication, fuzzing, targeted & no & simulated & no\\
-CAN-MIRGU \citep{rajapaksha2024canmirgu} & 1 & real injection + simulated & no & yes & no\\
-can-train-and-test \citep{lampe2023cantt} & 4 & nine attack types & no & yes & \textbf{yes}\\
+Car-Hacking \citep{song2020dcnn}          & 1 & fabrication                    & yes (\SI{3.0}{\second} gaps) & no        & no\\
+Survival Analysis \citep{han2018survival} & 3 & fabrication                    & yes & no        & partial\\
+ROAD \citep{verma2024road}                & 1 & fabrication, fuzzing, targeted & no  & sim. & no\\
+CAN-MIRGU \citep{rajapaksha2024canmirgu}  & 1 & real injection, simulated      & no  & yes       & no\\
+can-train-and-test \citep{lampe2023cantt} & 4 & nine attack types              & no  & yes       & \textbf{yes}\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -304,35 +316,39 @@ criteria for calling a detector ``lightweight'' or ``real-time'' and noting that
 frequently made without substantiation. Table~\ref{tab:related-eval} compares the reporting practice
 of representative recent work with the protocol used here.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
-\caption{Reporting practice in representative recent CAN IDS work. ``FA/h'' = false alarms per hour
-of normal driving; ``Event-level'' = detection credited per attack episode rather than per window;
-``Unseen vehicle'' = evaluated on a vehicle absent from training; ``Cost'' = measured inference cost
-on CPU/ECU-like hardware. Entries reflect what each paper reports, not the quality of its method.}
+\caption{Reporting practice in representative recent CAN IDS work.
+\checkmark~= reported, $\circ$~= partially reported, --~= not reported.
+``FA/h'' = false alarms per hour of normal driving; ``Event'' = detection credited per attack
+episode rather than per window; ``Unseen veh.'' = evaluated on a vehicle absent from training;
+``Cost'' = measured inference cost on CPU or ECU-like hardware. Entries reflect what each paper
+reports, not the quality of its method.}
 \label{tab:related-eval}
-\small
-\begin{tabular}{llccccc}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}L{0.21\linewidth}L{0.17\linewidth}C{0.065\linewidth}C{0.065\linewidth}C{0.085\linewidth}C{0.055\linewidth}L{0.15\linewidth}@{}}
 \toprule
-Work & Corpora & FA/h & Event-level & Unseen vehicle & Cost & Headline metric\\
+Work & Corpora & \shortstack{FA\\per h} & \shortstack{Event\\level} & \shortstack{Unseen\\vehicle} &
+Cost & Headline metric\\
 \midrule
-\citet{song2020dcnn}          & Car-Hacking            & no  & no  & no  & no  & $F_1$, FNR\\
-\citet{desta2022reccnn}       & Car-Hacking, own       & no  & no  & no  & no  & accuracy\\
-\citet{lo2022hydlids}         & Car-Hacking            & no  & no  & no  & no  & accuracy, FAR\\
-\citet{stabili2022daga}       & own                    & no  & no  & no  & \textbf{yes} & detection vs memory\\
-\citet{rajapaksha2023beyond}  & two public             & no  & no  & no  & partial & $F_1$, latency\\
-\citet{kang2024canival}       & X-CANIDS, SynCAN       & no  & no  & no  & no  & TPR/TNR\\
-\citet{ileri2025metacan}      & three public           & no  & no  & no  & no  & accuracy\\
-\citet{le2026tinycnn}         & four public            & no  & no  & partial & \textbf{yes} & accuracy, ms, MB\\
-\citet{singh2026efficient}    & Car-Hacking, ROAD      & no  & no  & no  & partial & $F_1$, params\\
-\citet{khreasat2026relational}& HCRL, ROAD             & no  & no  & partial & no  & ROC-AUC transfer\\
-\citet{hegde2026residualization}& HCRL, ROAD           & no  & no  & no  & no  & $F_1$, ROC-AUC\\
-\citet{kidmose2025cansleuth}  & six public             & no  & no  & \textbf{yes} & no  & $F_1$ spread\\
-\citet{koltai2026cantrust}    & seven public           & no  & no  & partial & no  & cross-dataset spread\\
+\citet{song2020dcnn}            & Car-Hacking        & --  & --  & --  & --  & $F_1$, FNR\\
+\citet{desta2022reccnn}         & Car-Hacking, own   & --  & --  & --  & --  & accuracy\\
+\citet{lo2022hydlids}           & Car-Hacking        & --  & --  & --  & --  & accuracy, FAR\\
+\citet{stabili2022daga}         & own                & --  & --  & --  & \checkmark & detection vs memory\\
+\citet{rajapaksha2023beyond}    & two public         & --  & --  & --  & $\circ$ & $F_1$, latency\\
+\citet{kang2024canival}         & X-CANIDS, SynCAN   & --  & --  & --  & --  & TPR, TNR\\
+\citet{ileri2025metacan}        & three public       & --  & --  & --  & --  & accuracy\\
+\citet{le2026tinycnn}           & four public        & --  & --  & $\circ$ & \checkmark & accuracy, ms, MB\\
+\citet{singh2026efficient}      & Car-Hacking, ROAD  & --  & --  & --  & $\circ$ & $F_1$, parameters\\
+\citet{khreasat2026relational}  & HCRL, ROAD         & --  & --  & $\circ$ & --  & ROC-AUC transfer\\
+\citet{hegde2026residualization}& HCRL, ROAD         & --  & --  & --  & --  & $F_1$, ROC-AUC\\
+\citet{kidmose2025cansleuth}    & six public         & --  & --  & \checkmark & --  & $F_1$ spread\\
+\citet{koltai2026cantrust}      & seven public       & --  & --  & $\circ$ & --  & dataset spread\\
 \midrule
-\textbf{This work}            & Car-Hacking, ROAD, can-train-and-test
-                              & \textbf{yes} & \textbf{yes} & \textbf{yes} & \textbf{yes}
-                              & events at a budget\\
+\textbf{This work}              & Car-Hacking, ROAD, can-train-and-test
+                                & \checkmark & \checkmark & \checkmark & \checkmark
+                                & events at a budget\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -397,7 +413,7 @@ attacks on higher-layer services above CAN.
 \section{System architecture}
 \label{sec:arch}
 
-\begin{figure*}[t]
+\begin{figure*}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figs/architecture.pdf}
 \caption{Architecture of the proposed detector and of the evaluation harness that surrounds it.
@@ -416,8 +432,9 @@ to every detector we compare, not only to ours.}
 
 Figure~\ref{fig:arch} shows the complete pipeline, which has four stages and one calibration path.
 
-\paragraph{Stage 1: framing and references.} Bus traffic is a stream of frames
-$(t_i,\mathrm{ID}_i,\mathrm{DLC}_i,\mathbf{b}_i)$. The stream is cut into sliding windows of
+\paragraph{Stage 1: framing and references.} Bus traffic is a stream of frames, each carrying a
+timestamp, an arbitration identifier, a data-length code and up to eight payload bytes. The stream
+is cut into sliding windows of
 $F=64$ consecutive frames with stride $16$, and independently into fixed \SI{100}{\milli\second}
 time windows that carry the labels and the alarm logic. From the first $W=\SI{30}{\second}$ of each
 capture the system estimates, for every arbitration identifier observed, a small set of reference
@@ -464,12 +481,12 @@ payload. Fix a window length $\Delta=\SI{100}{\milli\second}$ and let
 $w(i)=\lfloor (t_i-t_1)/\Delta\rfloor$ be the window index of frame $i$; window $w$ contains
 $\mathcal{W}_w=\{i: w(i)=w\}$ and there are $T$ windows.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Notation.}
 \label{tab:notation}
 \small
-\begin{tabular}{ll}
+\begin{tabular}{@{}lL{0.70\linewidth}@{}}
 \toprule
 Symbol & Meaning\\
 \midrule
@@ -477,15 +494,16 @@ $\mathcal{F}$, $N$ & frame sequence of a capture and its length\\
 $\Delta$, $T$, $w$ & window length (\SI{100}{\milli\second}), number of windows, window index\\
 $F$, $S$ & frame-window length ($64$) and stride ($16$)\\
 $W$ & warm-up horizon for per-identifier references (\SI{30}{\second})\\
-$\mathcal{I}$, $\mu_{\mathrm{ID}}$ & identifier alphabet of a capture; reference statistics of identifier $\mathrm{ID}$\\
+$\mathcal{I}$ & identifier alphabet of one capture\\
+$m_u$, $r_u$, $\underline{b}_u$, $\overline{b}_u$ & reference cadence, rate and byte range of identifier $u$\\
 $\phirel,\phires$ & identifier-agnostic representations (12 and 14 features per frame)\\
 $s_w\in[0,1]$ & detector score of window $w$\\
 $y_w\in\{0,1\}$ & window label: an injected frame is present (after gap filling)\\
 $\mathcal{E}=\{(o_e,c_e)\}$ & attack episodes, onset and end window\\
 $a_w(\tau;k,n)$ & alarm indicator of the $k$-of-$n$ rule at threshold $\tau$\\
 $B$, $\delta$ & false-alarm budget (per hour) and alarm duty cap\\
-$D(\tau)$, $\FA(\tau)$, $\rho(\tau)$ & events detected, false alarms per hour, alarm duty\\
-$\ell_e(\tau)$ & detection latency of episode $e$\\
+$\FA(\tau)$, $\rho(\tau)$ & false alarms per hour and alarm duty at threshold $\tau$\\
+$D^\star(B)$, $\ell_e(\tau)$ & events detected at budget $B$; detection latency of episode $e$\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -496,30 +514,33 @@ Let $p(i)$ be the index of the previous frame with the same identifier. For iden
 \mathcal{I}$ let $\mathcal{W}^u=\{i:\mathrm{ID}_i=u\}$ and let the warm-up set be
 $\mathcal{W}^u_W=\{i\in\mathcal{W}^u: t_i-t_1\le W\}$. The references are
 \begin{align}
-m_u &= \operatorname{median}\{\,t_i-t_{p(i)} : i\in\mathcal{W}^u_W\,\}, &
-r_u &= \frac{|\mathcal{W}^u_W|}{\max(t_{\max}-t_1,1)}\,\Delta, \label{eq:refs}\\
-\underline{b}_{u,c} &= \min_{i\in\mathcal{W}^u_W} b_{i,c}, &
-\overline{b}_{u,c} &= \max_{i\in\mathcal{W}^u_W} b_{i,c}, \qquad c=1,\dots,8 . \nonumber
+m_u &= \operatorname{median}\{\,t_i-t_{p(i)} \;:\; i\in\mathcal{W}^u_W\,\},
+&\quad
+r_u &= \Delta\,\frac{|\mathcal{W}^u_W|}{\max(t_{\max}-t_1,\,1)}, \label{eq:refs}\\[2pt]
+\underline{b}_{u,c} &= \min_{i\in\mathcal{W}^u_W} b_{i,c},
+&\quad
+\overline{b}_{u,c} &= \max_{i\in\mathcal{W}^u_W} b_{i,c}, \nonumber
 \end{align}
-Branch A maps frame $i$ with $u=\mathrm{ID}_i$ to $\phirel(i)\in\mathbb{R}^{12}$, whose components
-include the cadence ratio and the range excursion
-\begin{equation}
-\phirel_1(i)=\frac{t_i-t_{p(i)}}{m_u},
-\qquad
-\phirel_9(i)=\max_{c}\;\frac{\max\!\big(\underline{b}_{u,c}-b_{i,c},\; b_{i,c}-\overline{b}_{u,c}\big)}
-{\max(\overline{b}_{u,c}-\underline{b}_{u,c},1)},
-\label{eq:rel}
-\end{equation}
-together with bit- and byte-change fractions with respect to frame $p(i)$, the
-fraction of bytes below and above the reference range, per-identifier and bus-wide rate ratios, and a
-DLC-change indicator. Branch B first forms, for each window $w$ and identifier $u$, a vector
+for each byte position $c=1,\dots,8$. Branch A maps frame $i$ with $u=\mathrm{ID}_i$ to
+$\phirel(i)\in\mathbb{R}^{12}$. Two of its components are the cadence ratio and the range
+excursion,
+\begin{align}
+\phirel_1(i) &= \frac{t_i-t_{p(i)}}{m_u}, \label{eq:rel}\\[2pt]
+\phirel_9(i) &= \max_{c\,\in\,\{1,\dots,8\}}\;
+\frac{\max\!\big(\underline{b}_{u,c}-b_{i,c},\;\; b_{i,c}-\overline{b}_{u,c}\big)}
+{\max\!\big(\overline{b}_{u,c}-\underline{b}_{u,c},\;1\big)}, \label{eq:rel2}
+\end{align}
+the remaining ten being bit- and byte-change fractions with respect to frame $p(i)$, the fraction of
+bytes below and above the reference range, per-identifier and bus-wide rate ratios, and a DLC-change
+indicator. Branch B first forms, for each window $w$ and identifier $u$, a vector
 $x_{w,u}\in\mathbb{R}^{14}$ of temporal, protocol and payload statistics, then residualises it,
-\begin{equation}
-\phires_{w,u} \;=\; \operatorname{clip}\!\left(\frac{x_{w,u}-\mu_u}{\sigma_u},\,-20,\,20\right),
-\qquad
-(\mu_u,\sigma_u)=\big(\operatorname{mean},\operatorname{sd}\big)\{x_{w,u}: w\Delta\le W\},
-\label{eq:res}
-\end{equation}
+\begin{align}
+\phires_{w,u} &= \operatorname{clip}\!\left(\frac{x_{w,u}-\mu_u}{\sigma_u},\;-20,\;20\right),
+\label{eq:res}\\[2pt]
+\text{where}\quad \big(\mu_u,\sigma_u\big) &= \big(\operatorname{mean},\,\operatorname{sd}\big)
+\big\{\,x_{w,u} \;:\; w\Delta\le W\,\big\},
+\label{eq:resmu}
+\end{align}
 and assigns to frame $i$ the vector of its own identifier and window. Both maps are invariant to a
 relabelling of $\mathcal{I}$: they never use the numeric value or the learned embedding of an
 identifier, only statistics computed within its own stream. This is the formal sense in which the
@@ -540,21 +561,18 @@ a_w(\tau;k,n) \;=\; \mathbb{1}\!\left[\;\sum_{j=\max(1,w-n+1)}^{w}\mathbb{1}[s_j
 \end{equation}
 An episode is \emph{detected} if the rule fires inside it, and its latency is the time from onset to
 the first such alarm,
-\begin{equation}
-d_e(\tau)=\mathbb{1}\!\left[\exists\,w\in[o_e,c_e]: a_w(\tau)=1\right],
-\qquad
-\ell_e(\tau)=\Delta\cdot\min\{\,w-o_e:\; w\in[o_e,c_e],\,a_w(\tau)=1\,\}.
-\label{eq:detect}
-\end{equation}
+\begin{align}
+d_e(\tau) &= \mathbb{1}\!\left[\;\exists\,w\in[o_e,c_e]:\; a_w(\tau)=1\;\right], \label{eq:detect}\\[2pt]
+\ell_e(\tau) &= \Delta\cdot\min\big\{\,w-o_e \;:\; w\in[o_e,c_e],\; a_w(\tau)=1\,\big\}. \label{eq:latency}
+\end{align}
 A \emph{false alarm} is a rising edge on attack-free traffic. Writing $\mathcal{C}$ for the set of
 attack-free windows (all windows of an attack-free capture, and the pre-onset windows of an attack
 capture) and $H=\Delta|\mathcal{C}|/3600$ for their duration in hours,
-\begin{equation}
-\FA(\tau)=\frac{1}{H}\sum_{w\in\mathcal{C}}\mathbb{1}\!\left[a_w(\tau)=1 \wedge a_{w-1}(\tau)=0\right],
-\qquad
-\rho(\tau)=\frac{1}{|\mathcal{C}|}\sum_{w\in\mathcal{C}} a_w(\tau).
-\label{eq:fa}
-\end{equation}
+\begin{align}
+\FA(\tau) &= \frac{1}{H}\sum_{w\in\mathcal{C}}
+             \mathbb{1}\!\left[\,a_w(\tau)=1 \;\wedge\; a_{w-1}(\tau)=0\,\right], \label{eq:fa}\\[2pt]
+\rho(\tau) &= \frac{1}{|\mathcal{C}|}\sum_{w\in\mathcal{C}} a_w(\tau). \label{eq:duty}
+\end{align}
 The duty $\rho$ is what prevents a degenerate solution: a threshold so low that the alarm never
 clears produces exactly one rising edge per capture and therefore an arbitrarily small $\FA$, while
 being useless. We require $\rho\le\delta$ with $\delta=0.02$.
@@ -594,7 +612,7 @@ for the references, so it is suitable for streaming implementation on a gateway 
 requirement is the practical price: the first $W$ seconds after ignition are used to estimate
 references and are excluded from evaluation.
 
-\begin{algorithm}[t]
+\begin{algorithm}[htbp]
 \caption{Identifier-agnostic feature construction (per capture, no labels)}
 \label{alg:features}
 \begin{algorithmic}[1]
@@ -620,7 +638,7 @@ duty test on line~6 is what distinguishes it from the usual practice of maximisi
 validation set, and the fact that it uses only attack-free traffic is what makes per-vehicle
 commissioning possible without labelled attacks.
 
-\begin{algorithm}[t]
+\begin{algorithm}[htbp]
 \caption{Per-vehicle threshold calibration under a false-alarm budget}
 \label{alg:calib}
 \begin{algorithmic}[1]
@@ -644,7 +662,7 @@ independently and the alarms are combined by disjunction, with each branch calib
 budget. The per-window cost is two ConvGRU evaluations plus $O(1)$ alarm bookkeeping;
 Section~\ref{sec:cost} measures it.
 
-\begin{algorithm}[t]
+\begin{algorithm}[htbp]
 \caption{Paired identifier-agnostic detection at run time}
 \label{alg:detect}
 \begin{algorithmic}[1]
@@ -668,21 +686,23 @@ with budget $B/2$ each, rule $(k,n)$
 
 Table~\ref{tab:datasets} summarises the three corpora as we use them, after preprocessing.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Corpora as used in this study, after preprocessing. ``Normal'' is the attack-free traffic
 available for calibration and false-alarm measurement.}
 \label{tab:datasets}
-\small
-\begin{tabular}{llrrrl}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.17\linewidth}L{0.13\linewidth}C{0.055\linewidth}C{0.08\linewidth}C{0.10\linewidth}L{0.185\linewidth}@{}}
 \toprule
-Corpus & Role & Vehicles & Events & Normal & Attack types\\
+Corpus & Role in this study & Veh. & Events & Normal & Attack types\\
 \midrule
-Car-Hacking \citep{song2020dcnn} & benchmark critique & 1 & $4\times300$ & \SI{481.6}{\second} &
+Car-Hacking \citep{song2020dcnn}          & benchmark critique  & 1 & $4\times300$ & \SI{481.6}{\second} &
 DoS, fuzzy, gear, RPM\\
-ROAD \citep{verma2024road} & main detection study & 1 & 29 & \SI{72}{\minute} &
+ROAD \citep{verma2024road}                & detection study     & 1 & 29 & \SI{72}{\minute} &
 fuzzing, targeted injection, masquerade\\
-can-train-and-test \citep{lampe2023cantt} & cross-vehicle study & 4 & 44 (+26 masq.) & \SI{22}{\minute}/pair &
+can-train-and-test \citep{lampe2023cantt} & cross-vehicle study & 4 & 44 ($+26$ masq.) & \SI{22}{\minute} per pair &
 DoS, spoofing, interval, standstill, masquerade\\
 \bottomrule
 \end{tabular}
@@ -758,7 +778,7 @@ batch size 1.
 
 \subsection{Car-Hacking rewards learning the schedule}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/carhacking_schedule.pdf}
 \caption{Car-Hacking. (a) Median attack duration and median gap between consecutive attacks for the
@@ -787,7 +807,7 @@ method could demonstrate an advantage. This is consistent with the redundancy an
 
 \subsection{On ROAD, architectural complexity does not pay}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/model_comparison.pdf}
 \caption{ROAD: events detected of 29 at two false-alarm budgets, 3-of-5 alarm rule, alarm duty
@@ -797,12 +817,13 @@ events that no configuration exceeds.}
 \label{fig:comparison}
 \end{figure}
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{ROAD, 3-fold capture-level cross-validation, 29 attack events, \SI{1.2}{\hour} of held-out
 attack-free driving, 3-of-5 alarm rule. Events detected (mean $\pm$ s.d. over seeds).}
 \label{tab:road}
-\begin{tabular}{lrrr}
+\small
+\begin{tabular}{@{}L{0.36\linewidth}C{0.10\linewidth}C{0.16\linewidth}C{0.16\linewidth}@{}}
 \toprule
 Model & Params & $\leq$\SI{5}{\per\hour} & $\leq$\SI{30}{\per\hour}\\
 \midrule
@@ -830,7 +851,7 @@ Figure~\ref{fig:curves} shows the full trade-off from which those two operating 
 The unsupervised detectors are unusable at any budget, the GBDT saturates at 20 events, and the
 learned sequence models converge to the ceiling once the budget exceeds roughly 20 alarms per hour.
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.74\linewidth]{figs/road_event_curves.pdf}
 \caption{ROAD: attack events detected against false alarms per hour of held-out attack-free driving,
@@ -841,7 +862,7 @@ high alarm rates are unusable in a vehicle regardless of their AUC.}
 
 \subsection{A detectability hierarchy}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/latency_tiers.pdf}
 \caption{(a) Events detected against median detection latency for three alarm rules
@@ -872,18 +893,18 @@ for two of five seeds, whereas the stable 3-of-5 rule costs \SI{220}{\milli\seco
 sub-\SI{100}{\milli\second} latency therefore requires stating the alarm rule and its stability;
 otherwise the number is not comparable between papers.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Latency and stability by alarm rule. ConvGRU with payload novelty at $\leq$\SI{5}{\per\hour},
 five seeds, ROAD.}
 \label{tab:latency}
-\begin{tabular}{lrrl}
+\begin{tabular}{@{}lrrL{0.40\linewidth}@{}}
 \toprule
 Rule & Events detected & Median latency & Note\\
 \midrule
-1-of-1 & $16.2\pm13.2$ & \SI{0}{\milli\second} & no feasible threshold for 2/5 seeds\\
-2-of-3 & $21.2\pm10.6$ & \SI{112}{\milli\second} & 1/5 seeds infeasible\\
-3-of-5 & $\mathbf{26.2\pm1.0}$ & \SI{220}{\milli\second} & stable\\
+1-of-1 & $16.2\pm13.2$ & \SI{0}{\milli\second} & no feasible threshold for 2 of 5 seeds\\
+2-of-3 & $21.2\pm10.6$ & \SI{112}{\milli\second} & 1 of 5 seeds infeasible\\
+3-of-5 & $\mathbf{26.2\pm1.0}$ & \SI{220}{\milli\second} & stable across all seeds\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -896,13 +917,14 @@ ranking of the models in Table~\ref{tab:road}. We encountered each of them in th
 study, in the order shown, and each initially produced a confident conclusion that a stricter
 protocol subsequently removed.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Five evaluation choices, each sufficient on its own to reverse model rankings. ``Permissive''
 is the choice that produced the wrong conclusion; ``strict'' is the setting used in this paper.}
 \label{tab:traps}
-\small
-\begin{tabular}{p{0.21\linewidth}p{0.36\linewidth}p{0.36\linewidth}}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}L{0.20\linewidth}L{0.37\linewidth}L{0.37\linewidth}@{}}
 \toprule
 Choice & Permissive setting and its conclusion & Strict setting and the true result\\
 \midrule
@@ -921,7 +943,7 @@ Composition of held-out normal traffic & time slices of the drives used for test
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.56\linewidth]{figs/threshold_transfer.pdf}
 \caption{The fifth trap made visible. A threshold is calibrated to a requested false-alarm budget
@@ -950,7 +972,7 @@ of $F_1$ scores.
 
 \subsection{Identifier-embedding detectors transfer to nothing}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.74\linewidth]{figs/cross_vehicle.pdf}
 \caption{Unknown-vehicle events detected at $\leq$\SI{5}{\per\hour} false alarms, thresholds
@@ -969,7 +991,7 @@ detection falls to zero. Removing the payload features changes nothing, so this 
 one feature set: the learned identifier embeddings and traffic patterns are vehicle-specific, and the
 target vehicles carry up to 98 identifiers against 52 in the source.
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.52\linewidth]{figs/adaptation.pdf}
 \caption{Unlabelled adaptation does not repair transfer. The source-trained detector is given 0, 1,
@@ -1003,15 +1025,16 @@ threshold it still finds 10 of 10. Discrimination survives; calibration does not
 representations must therefore be combined as separate detectors, which is what Section~\ref{sec:pair}
 does.
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Cross-vehicle detection at $\leq$\SI{5}{\per\hour}, thresholds calibrated on the target
 vehicle's own attack-free traffic, three seeds. Three of the four pairs cross manufacturers.}
 \label{tab:cross}
 \small
-\begin{tabular}{lrrrr}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}L{0.26\linewidth}C{0.10\linewidth}C{0.13\linewidth}C{0.19\linewidth}C{0.14\linewidth}@{}}
 \toprule
-Vehicle pair & Events & ID embedding & $\phires$ residualisation & $\phirel$ relative\\
+Vehicle pair & Events & \shortstack{ID\\embedding} & \shortstack{$\phires$\\residualisation} & \shortstack{$\phirel$\\relative}\\
 \midrule
 Impala $\rightarrow$ Silverado   & 8  & 0 & $2.7\pm0.5$  & $\mathbf{6.3\pm1.7}$\\
 Traverse $\rightarrow$ Forester  & 12 & 0 & $\mathbf{12.0\pm0.0}$ & $\mathbf{12.0\pm0.0}$\\
@@ -1027,7 +1050,7 @@ Masquerade subsets               & 26 & -- & \textbf{10.3 (40\%)} & 4.7 (18\%)\\
 \section{Paired identifier-agnostic detectors}
 \label{sec:pair}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.60\linewidth]{figs/pair_union.pdf}
 \caption{Two identifier-agnostic detectors with OR-ed alarms, each calibrated to half the budget, on
@@ -1036,22 +1059,23 @@ The union exceeds both branches on both test sets.}
 \label{fig:pair}
 \end{figure}
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Paired detector on can-train-and-test, four vehicle pairs $\times$ two seeds. Unknown
 vehicle: 88 events; masquerade: 52 events. Each branch of the union is calibrated to $B/2$.}
 \label{tab:pair}
-\begin{tabular}{lrrrrr}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.23\linewidth}C{0.12\linewidth}C{0.12\linewidth}C{0.12\linewidth}C{0.12\linewidth}C{0.12\linewidth}@{}}
 \toprule
-& \multicolumn{2}{c}{Unknown vehicle} & \multicolumn{2}{c}{Masquerade} & \\
+& \multicolumn{2}{c}{Unknown vehicle (88)} & \multicolumn{2}{c}{Masquerade (52)} & \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-Branch & $\leq$\SI{5}{\per\hour} & $\leq$\SI{30}{\per\hour} & $\leq$\SI{5}{\per\hour} &
-$\leq$\SI{30}{\per\hour} & Measured FA/h\\
+Branch & $B{=}5$/h & $B{=}30$/h & $B{=}5$/h & $B{=}30$/h & \shortstack{FA/h\\measured}\\
 \midrule
-A: $\phirel$ relative        & 59/88 (67\%) & 62/88 (70\%) & 10/52 (19\%) & 16/52 (31\%) & 1.2\\
-B: $\phires$ residualisation & 61/88 (69\%) & 63/88 (72\%) & 19/52 (37\%) & 25/52 (48\%) & 1.3\\
-A $\vee$ B                   & \textbf{71/88 (81\%)} & \textbf{73/88 (83\%)} &
-\textbf{20/52 (38\%)} & \textbf{27/52 (52\%)} & \textbf{0.3}\\
+A: $\phirel$ relative        & 59 (67\%) & 62 (70\%) & 10 (19\%) & 16 (31\%) & 1.2\\
+B: $\phires$ residualisation & 61 (69\%) & 63 (72\%) & 19 (37\%) & 25 (48\%) & 1.3\\
+A $\vee$ B                   & \textbf{71 (81\%)} & \textbf{73 (83\%)} &
+\textbf{20 (38\%)} & \textbf{27 (52\%)} & \textbf{0.3}\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1075,7 +1099,7 @@ calibration procedure.
 \section{Ablation study}
 \label{sec:ablation}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/ablation.pdf}
 \caption{(a) Detector ablation on ROAD at $\leq$\SI{30}{\per\hour}: removing history and the graph
@@ -1086,30 +1110,31 @@ and running them as two detectors is best.}
 \label{fig:ablation}
 \end{figure}
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Ablations. Upper block: detector components on ROAD (29 events, $\leq$\SI{30}{\per\hour}).
 Lower block: representation and combination on can-train-and-test (44 unknown-vehicle events,
 $\leq$\SI{5}{\per\hour}). $\Delta$ is the change with respect to the row marked as reference.}
 \label{tab:ablation}
 \small
-\begin{tabular}{llrr}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lL{0.44\linewidth}rr@{}}
 \toprule
 Ablation & Configuration & Events & $\Delta$\\
 \midrule
-\multirow{5}{*}{ROAD detector}
+\multirow{5}{*}{\shortstack[l]{ROAD\\detector}}
  & ConvGRU + payload novelty (reference) & $27.0\pm0.0$ & --\\
  & $-$ payload novelty (raw frames only) & $27.0\pm0.0$ & $0.0$\\
- & $+$ graph attention, $10\times$ parameters & $26.8\pm0.4$ & $-0.2$\\
- & $-$ temporal history, $-$ sequence model (window GBDT) & $20.0$ & $-7.0$\\
- & $-$ supervision (payload novelty exceedance) & $0.0$ & $-27.0$\\
+ & $+$ graph attention ($10\times$ parameters) & $26.8\pm0.4$ & $-0.2$\\
+ & $-$ history and sequence model (window GBDT) & $20.0$ & $-7.0$\\
+ & $-$ supervision (payload-novelty exceedance) & $0.0$ & $-27.0$\\
 \midrule
-\multirow{5}{*}{Cross-vehicle}
+\multirow{5}{*}{\shortstack[l]{Cross-\\vehicle}}
  & $\phirel$ relative (reference) & 34.3 (78\%) & --\\
  & $\phires$ residualisation & 30.3 (69\%) & $-4.0$\\
  & identifier embedding $+$ payload & 0.0 (0\%) & $-34.3$\\
  & concatenation $[\phirel,\phires]$ & 23.3 (53\%) & $-11.0$\\
- & two detectors, OR-ed alarms & \textbf{81\% of 88 events} & $+3$\,pp\\
+ & two detectors, OR-ed alarms & \textbf{81\% of 88} & $+3$\,pp\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1137,20 +1162,23 @@ halving the measured alarm rate.
 \section{Deployment cost}
 \label{sec:cost}
 
-\begin{table}[t]
+\begin{table}[htbp]
 \centering
 \caption{Inference cost, one CPU thread, batch size 1. ``Rate'' is the number of inferences per
 second implied by the sliding-window stride; ``duty'' is the resulting fraction of one core.}
 \label{tab:cost}
-\begin{tabular}{lrrrrrr}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.30\linewidth}C{0.09\linewidth}C{0.07\linewidth}C{0.09\linewidth}C{0.07\linewidth}C{0.09\linewidth}C{0.09\linewidth}@{}}
 \toprule
-Model & Params & int8 & Median & p99 & Rate & Duty of one core\\
+Model & Params & int8 & Median & p99 & Rate & Core duty\\
+      &        & (MB) & (ms)   & (ms) & (s$^{-1}$) & (\%)\\
 \midrule
-ConvGRU + payload novelty      & 98\,k   & 0.10\,MB & \SI{1.35}{\milli\second} & \SI{1.69}{\milli\second} & \SI{150}{\per\second} & 20\%\\
-Graph attention                & 1.05\,M & 1.05\,MB & \SI{38.9}{\milli\second} & \SI{70.1}{\milli\second} & \SI{10}{\per\second} & 39\%\\
-Graph attention, 50 MC passes  & 1.05\,M & 1.05\,MB & \SI{1945}{\milli\second} & \SI{3507}{\milli\second} & \SI{10}{\per\second} & 1945\%\\
+ConvGRU + payload novelty     & 98\,k   & 0.10 & 1.35 & 1.69 & 150 & 20\\
+Graph attention               & 1.05\,M & 1.05 & 38.9 & 70.1 & 10  & 39\\
+Graph attention, 50 MC passes & 1.05\,M & 1.05 & 1945 & 3507 & 10  & 1945\\
 \midrule
-Paired detector (two ConvGRU)  & 196\,k  & 0.20\,MB & \SI{2.70}{\milli\second} & \SI{3.38}{\milli\second} & \SI{150}{\per\second} & 40\%\\
+Paired detector (two ConvGRU) & 196\,k  & 0.20 & 2.70 & 3.38 & 150 & 40\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1214,15 +1242,15 @@ CPU and are bounds rather than automotive measurements.
 \label{sec:repro}
 
 All code, configurations, evaluation harness and result summaries are available at
-\url{https://github.com/shishirbit/can-ids-evaluation}. The repository contains the dataset
-preparation scripts (\texttt{scripts/preprocess\_*.py}, \texttt{scripts/download\_*.sh}), the
-detectors (\texttt{src/galaxy\_its/models/}), the identifier-agnostic representations
-(\texttt{src/galaxy\_its/data/relative.py}, \texttt{residual.py}), the evaluation harness
-(\texttt{src/galaxy\_its/eval/operating.py}), the experiment drivers
-(\texttt{scripts/train\_sttf.py}, \texttt{baseline\_frames.py}, \texttt{id\_agnostic.py},
-\texttt{cross\_vehicle.py}, \texttt{per\_vehicle\_calib.py}, \texttt{pair\_detector.py}), the
-statistical comparison (\texttt{scripts/compare\_models.py}) and the figure generators
-(\texttt{scripts/make\_figures.py}, \texttt{make\_figures2.py}). Every number quoted in this paper is
+\url{https://github.com/shishirbit/can-ids-evaluation}. \sloppy The repository is organised as follows. Dataset
+preparation and download live in \texttt{scripts/}; the detectors in
+\texttt{src/galaxy\_its/models/}; the identifier-agnostic representations in
+\texttt{relative.py} and \texttt{residual.py} under \texttt{src/galaxy\_its/data/}; the
+evaluation harness in \texttt{operating.py} under \texttt{src/galaxy\_its/eval/}. The experiment
+drivers are \texttt{train\_sttf.py}, \texttt{baseline\_frames.py}, \texttt{id\_agnostic.py},
+\texttt{cross\_vehicle.py}, \texttt{per\_vehicle\_calib.py} and \texttt{pair\_detector.py};
+statistical comparison is in \texttt{compare\_models.py} and the figures are produced by
+\texttt{make\_figures.py} and \texttt{make\_figures2.py}. Every number quoted in this paper is
 recorded in \texttt{experiments/paper\_numbers.json} together with the script that produced it, and
 the figures are generated from that file so that text, tables and plots cannot diverge.
 
