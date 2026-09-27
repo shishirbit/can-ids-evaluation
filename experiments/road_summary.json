@@ -1,0 +1,525 @@
+{
+  "road_v3_nograph": {
+    "metrics": {
+      "STTF": {
+        "0s": {
+          "all": {
+            "n": 56020,
+            "pos_rate": 0.11249553730810424,
+            "accuracy": 0.9488397001071046,
+            "precision": 0.785476902625457,
+            "recall": 0.7500793398920977,
+            "f1": 0.76737012987013,
+            "fpr": 0.025966450782412807,
+            "fnr": 0.24992066010790226,
+            "mcc": 0.7388946512378052,
+            "auc_roc": 0.9379816573599506,
+            "auc_pr": 0.8169771494580476,
+            "brier": 0.06596513092517853,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 49718,
+            "pos_rate": 0.0,
+            "accuracy": 0.9740335492175872,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "fpr": 0.025966450782412807,
+            "fnr": 0.0,
+            "mcc": NaN,
+            "auc_roc": NaN,
+            "auc_pr": NaN,
+            "brier": 0.060453806072473526,
+            "threshold": 0.5
+          }
+        },
+        "1s": {
+          "all": {
+            "n": 55640,
+            "pos_rate": 0.11739755571531273,
+            "accuracy": 0.9483824586628324,
+            "precision": 0.8055091819699499,
+            "recall": 0.738671157379057,
+            "f1": 0.7706436671458233,
+            "fpr": 0.023723222285574653,
+            "fnr": 0.261328842620943,
+            "mcc": 0.7425070647123574,
+            "auc_roc": 0.9640769886520785,
+            "auc_pr": 0.8217000558511834,
+            "brier": 0.06584321707487106,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 49395,
+            "pos_rate": 0.005810304686709181,
+            "accuracy": 0.9724668488713433,
+            "precision": 0.07319013524264122,
+            "recall": 0.3205574912891986,
+            "f1": 0.11917098445595854,
+            "fpr": 0.023723222285574653,
+            "fnr": 0.6794425087108014,
+            "mcc": 0.14325818673934815,
+            "auc_roc": 0.8741488219522696,
+            "auc_pr": 0.07318764137046298,
+            "brier": 0.06561499834060669,
+            "threshold": 0.5
+          }
+        },
+        "2s": {
+          "all": {
+            "n": 55260,
+            "pos_rate": 0.12225841476655809,
+            "accuracy": 0.9450959102424901,
+            "precision": 0.7844695811678386,
+            "recall": 0.7596210775606868,
+            "f1": 0.7718453902842534,
+            "fpr": 0.029069767441860465,
+            "fnr": 0.2403789224393132,
+            "mcc": 0.7407716046343142,
+            "auc_roc": 0.9645602571631186,
+            "auc_pr": 0.797285353877087,
+            "brier": 0.06652916967868805,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 49071,
+            "pos_rate": 0.011554686067127224,
+            "accuracy": 0.9637667869006133,
+            "precision": 0.12367930391547545,
+            "recall": 0.3509700176366843,
+            "f1": 0.1829044117647059,
+            "fpr": 0.029069767441860465,
+            "fnr": 0.6490299823633157,
+            "mcc": 0.19317484913931582,
+            "auc_roc": 0.9015827273359298,
+            "auc_pr": 0.13938643258733455,
+            "brier": 0.06880968809127808,
+            "threshold": 0.5
+          }
+        },
+        "5s": {
+          "all": {
+            "n": 54134,
+            "pos_rate": 0.13366830457752985,
+            "accuracy": 0.9438984741567222,
+            "precision": 0.7996289424860853,
+            "recall": 0.7743228302929795,
+            "f1": 0.7867724496243769,
+            "fpr": 0.029937310759520663,
+            "fnr": 0.22567716970702045,
+            "mcc": 0.754611467217825,
+            "auc_roc": 0.9663314107859686,
+            "auc_pr": 0.7807573613973169,
+            "brier": 0.07250411808490753,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 48192,
+            "pos_rate": 0.02685092961487384,
+            "accuracy": 0.9552830345285525,
+            "precision": 0.27889060092449924,
+            "recall": 0.419629057187017,
+            "f1": 0.33508176488738045,
+            "fpr": 0.029937310759520663,
+            "fnr": 0.580370942812983,
+            "mcc": 0.31992644435253387,
+            "auc_roc": 0.9113787704487816,
+            "auc_pr": 0.2778741910056442,
+            "brier": 0.0800677165389061,
+            "threshold": 0.5
+          }
+        }
+      },
+      "timing": {
+        "0s": {
+          "all": {
+            "n": 56020,
+            "pos_rate": 0.11249553730810424,
+            "accuracy": 0.9944305605141021,
+            "precision": 0.9965185676392573,
+            "recall": 0.9538241827991114,
+            "f1": 0.9747040700502675,
+            "fpr": 0.00042238223580996824,
+            "fnr": 0.046175817200888605,
+            "mcc": 0.9718706015573416,
+            "auc_roc": 0.9975348062405511,
+            "auc_pr": 0.990485772605432,
+            "brier": 0.0056090825237333775,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 49718,
+            "pos_rate": 0.0,
+            "accuracy": 0.9995776177641901,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "fpr": 0.00042238223580996824,
+            "fnr": 0.0,
+            "mcc": NaN,
+            "auc_roc": NaN,
+            "auc_pr": NaN,
+            "brier": 0.00044504733523353934,
+            "threshold": 0.5
+          }
+        },
+        "1s": {
+          "all": {
+            "n": 55640,
+            "pos_rate": 0.11739755571531273,
+            "accuracy": 0.9893961179007909,
+            "precision": 0.9964906417112299,
+            "recall": 0.912890385793019,
+            "f1": 0.9528603387663791,
+            "fpr": 0.0004276288995682984,
+            "fnr": 0.08710961420698102,
+            "mcc": 0.9480531822316827,
+            "auc_roc": 0.9903616370302161,
+            "auc_pr": 0.9666227326606398,
+            "brier": 0.011121724732220173,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 49395,
+            "pos_rate": 0.005810304686709181,
+            "accuracy": 0.9937645510679218,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "fpr": 0.0004276288995682984,
+            "fnr": 1.0,
+            "mcc": -0.001576613771681232,
+            "auc_roc": 0.8363289942752928,
+            "auc_pr": 0.040071442844569795,
+            "brier": 0.006817722227424383,
+            "threshold": 0.5
+          }
+        },
+        "2s": {
+          "all": {
+            "n": 55260,
+            "pos_rate": 0.12225841476655809,
+            "accuracy": 0.9844372059355773,
+            "precision": 0.9967981125716212,
+            "recall": 0.8755180580224985,
+            "f1": 0.9322301024428684,
+            "fpr": 0.0003917202704931552,
+            "fnr": 0.12448194197750148,
+            "mcc": 0.9259608657660566,
+            "auc_roc": 0.9910314431960565,
+            "auc_pr": 0.9577927002141917,
+            "brier": 0.016178755089640617,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 49071,
+            "pos_rate": 0.011554686067127224,
+            "accuracy": 0.9880581198671313,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "fpr": 0.0003917202704931552,
+            "fnr": 1.0,
+            "mcc": -0.002127899891942002,
+            "auc_roc": 0.9260545722005945,
+            "auc_pr": 0.08799146184590155,
+            "brier": 0.012639885768294334,
+            "threshold": 0.5
+          }
+        },
+        "5s": {
+          "all": {
+            "n": 54134,
+            "pos_rate": 0.13366830457752985,
+            "accuracy": 0.9703144049950124,
+            "precision": 0.9899042645778938,
+            "recall": 0.7859314538419016,
+            "f1": 0.8762036823049071,
+            "fpr": 0.001236726512857691,
+            "fnr": 0.2140685461580984,
+            "mcc": 0.8669795120156645,
+            "auc_roc": 0.9869323156913629,
+            "auc_pr": 0.9406490969028427,
+            "brier": 0.025562867522239685,
+            "threshold": 0.5
+          },
+          "pre_onset": {
+            "n": 48192,
+            "pos_rate": 0.02685092961487384,
+            "accuracy": 0.9722360557768924,
+            "precision": 0.19444444444444445,
+            "recall": 0.010819165378670788,
+            "f1": 0.02049780380673499,
+            "fpr": 0.001236726512857691,
+            "fnr": 0.9891808346213292,
+            "mcc": 0.04010433311706895,
+            "auc_roc": 0.944287713287207,
+            "auc_pr": 0.23364146854539744,
+            "brier": 0.02336779236793518,
+            "threshold": 0.5
+          }
+        }
+      }
+    },
+    "captures": [
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.34697222222222224,
+        "false_alarm_windows": 136
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.1262777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.09944444444444445,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 1700.0000000000002,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 1700.0000000000002,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_1",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_engine_coolant_temp_attack",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_engine_coolant_temp_attack_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 129
+      },
+      {
+        "name": "max_speedometer_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 125
+      },
+      {
+        "name": "reverse_light_off_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 200.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_1_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 39
+      },
+      {
+        "name": "reverse_light_on_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 40
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.18222222222222223,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.10794444444444445,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.012750000000000001,
+        "false_alarm_windows": 121
+      },
+      {
+        "name": "correlated_signal_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 400.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "correlated_signal_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 400.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "fuzzing_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 27
+      },
+      {
+        "name": "max_speedometer_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 70
+      },
+      {
+        "name": "max_speedometer_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 69
+      },
+      {
+        "name": "reverse_light_off_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 700.0000000000001,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 300.00000000000006,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.12302777777777779,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.1830277777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.013777777777777778,
+        "false_alarm_windows": 305
+      },
+      {
+        "name": "correlated_signal_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 7
+      },
+      {
+        "name": "correlated_signal_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 10
+      },
+      {
+        "name": "fuzzing_attack_3",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 1500.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 1500.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 1100.0,
+        "false_alarm_windows_before_onset": 14
+      },
+      {
+        "name": "reverse_light_off_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 3700.0,
+        "false_alarm_windows_before_onset": 14
+      },
+      {
+        "name": "reverse_light_on_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 1300.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_3_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      }
+    ]
+  }
+}

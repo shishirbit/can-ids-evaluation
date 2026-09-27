@@ -1,0 +1,48 @@
+branch B (per-ID residualisation):
+  ep 0 loss 0.1483 5s
+  ep 1 loss 0.0466 4s
+  ep 2 loss 0.0313 4s
+  ep 3 loss 0.0225 4s
+  ep 4 loss 0.0178 4s
+  ep 5 loss 0.0161 3s
+  ep 6 loss 0.0137 3s
+  ep 7 loss 0.0108 3s
+  ep 8 loss 0.0109 4s
+  ep 9 loss 0.0115 4s
+  ep 10 loss 0.0091 4s
+  ep 11 loss 0.0081 4s
+  ep 12 loss 0.0081 4s
+  ep 13 loss 0.0077 4s
+  ep 14 loss 0.0076 4s
+branch A (ID-relative):
+  ep 0 loss 0.0860 4s
+  ep 1 loss 0.0072 4s
+  ep 2 loss 0.0034 4s
+  ep 3 loss 0.0034 4s
+  ep 4 loss 0.0031 4s
+  ep 5 loss 0.0023 4s
+  ep 6 loss 0.0020 4s
+  ep 7 loss 0.0022 4s
+  ep 8 loss 0.0023 4s
+  ep 9 loss 0.0018 4s
+  ep 10 loss 0.0021 3s
+  ep 11 loss 0.0020 3s
+  ep 12 loss 0.0009 3s
+  ep 13 loss 0.0021 3s
+  ep 14 loss 0.0011 3s
+
+test                                     branch            budget    events    FA/h   duty
+test_02_unknown_vehicle_known_attack     A id-agnostic          5   12/12       2.5   0.0%
+test_02_unknown_vehicle_known_attack     B id-based             5   12/12       0.0   0.0%
+test_02_unknown_vehicle_known_attack     A OR B                 5   12/12       0.0   0.0%
+test_02_unknown_vehicle_known_attack     A id-agnostic         30   12/12      25.5   0.4%
+test_02_unknown_vehicle_known_attack     B id-based            30   12/12      17.8   0.1%
+test_02_unknown_vehicle_known_attack     A OR B                30   12/12      10.2   0.1%
+test_06_masquerade                       A id-agnostic          5    4/8        0.0   0.0%
+test_06_masquerade                       B id-based             5    4/8        0.0   0.0%
+test_06_masquerade                       A OR B                 5    5/8        0.0   0.0%
+test_06_masquerade                       A id-agnostic         30    5/8       10.2   0.5%
+test_06_masquerade                       B id-based            30    7/8       20.3   0.2%
+test_06_masquerade                       A OR B                30    8/8       20.3   0.6%
+
+saved -> experiments\pair_detector\set_02_s1.json

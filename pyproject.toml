@@ -1,0 +1,23 @@
+[project]
+name = "galaxy-its"
+version = "0.1.0"
+description = "GALAXY-ITS Phase 1: Spatio-Temporal Threat Forecaster (STTF) for CAN bus attack forecasting"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "tqdm",
+    "py7zr",
+    "pyyaml",
+]
+# torch is installed separately from the CUDA 12.8 index (RTX 50-series needs cu128+):
+#   uv pip install --python .venv torch --index-url https://download.pytorch.org/whl/cu128
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

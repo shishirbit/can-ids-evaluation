@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "model": "ConvGRU+payload (CPU, 1 thread)",
+      "params": 97889,
+      "mb_fp32": 0.391556,
+      "mb_int8": 0.097889,
+      "median_ms": 1.3490499986801296,
+      "p99_ms": 1.6889829959836784,
+      "infer_per_s": 150.0,
+      "core_duty": 0.20235749980201945
+    },
+    {
+      "model": "STTF graph (CPU, 1 thread)",
+      "params": 1047952,
+      "mb_fp32": 4.191808,
+      "mb_int8": 1.047952,
+      "median_ms": 38.9080999957514,
+      "p99_ms": 70.1470729956054,
+      "infer_per_s": 10.0,
+      "core_duty": 0.389080999957514
+    },
+    {
+      "model": "STTF graph + 50x MC dropout (CPU)",
+      "params": 1047952,
+      "mb_fp32": 4.191808,
+      "mb_int8": 1.047952,
+      "median_ms": 1945.40499978757,
+      "p99_ms": 3507.3536497802697,
+      "infer_per_s": 10.0,
+      "core_duty": 19.4540499978757
+    },
+    {
+      "model": "ConvGRU+payload (RTX 5060)",
+      "params": 97889,
+      "mb_fp32": 0.391556,
+      "mb_int8": 0.097889,
+      "median_ms": 0.6350999974529259,
+      "p99_ms": 1.2394340062746778,
+      "infer_per_s": 150.0,
+      "core_duty": 0.09526499961793888
+    },
+    {
+      "model": "STTF graph (RTX 5060)",
+      "params": 1047952,
+      "mb_fp32": 4.191808,
+      "mb_int8": 1.047952,
+      "median_ms": 2.5472499983152375,
+      "p99_ms": 2.700967993150698,
+      "infer_per_s": 10.0,
+      "core_duty": 0.025472499983152375
+    }
+  ],
+  "feature_extraction": {
+    "seconds_of_traffic": 444.75060999393463,
+    "graph_s": 0.7820075000054203,
+    "payload_s": 0.539199799997732
+  }
+}

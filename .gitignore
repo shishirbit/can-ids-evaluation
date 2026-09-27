@@ -1,0 +1,19 @@
+# Raw and processed CAN data (11 GB) - fetch with the download scripts instead
+data/
+
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Large experiment artefacts (model weights, cached predictions); summaries are kept
+*.pt
+*.npz
+experiments/**/figs_png/
+paper/figs_png/
+
+# Third-party publisher template (not ours to redistribute)
+paper/template/
+
+# Scratch
+*.tmp

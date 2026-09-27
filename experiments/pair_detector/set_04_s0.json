@@ -1,0 +1,85 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_04",
+    "epochs": 15,
+    "max_steps": 600,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 0,
+    "out": "experiments/pair_detector"
+  },
+  "results": {
+    "test_01_known_vehicle_known_attack|A id-agnostic|5": {
+      "detected": 10,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|B id-based|5": {
+      "detected": 10,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|A OR B|5": {
+      "detected": 10,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|A id-agnostic|30": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 22.933588150979457,
+      "duty": 0.003025959547698678
+    },
+    "test_01_known_vehicle_known_attack|B id-based|30": {
+      "detected": 10,
+      "events": 12,
+      "fa_per_h": 28.66698518872432,
+      "duty": 0.002866698518872432
+    },
+    "test_01_known_vehicle_known_attack|A OR B|30": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 11.466794075489728,
+      "duty": 0.0007963051441312311
+    },
+    "test_06_masquerade|A id-agnostic|5": {
+      "detected": 2,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|B id-based|5": {
+      "detected": 4,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A OR B|5": {
+      "detected": 4,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A id-agnostic|30": {
+      "detected": 2,
+      "events": 7,
+      "fa_per_h": 19.40700808625337,
+      "duty": 0.0016172506738544475
+    },
+    "test_06_masquerade|B id-based|30": {
+      "detected": 4,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A OR B|30": {
+      "detected": 4,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    }
+  }
+}

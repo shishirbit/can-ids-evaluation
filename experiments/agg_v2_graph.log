@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "D:\Research\New Idea Sep part-2\scripts\aggregate_road.py", line 105, in <module>
+    main()
+  File "D:\Research\New Idea Sep part-2\scripts\aggregate_road.py", line 99, in main
+    summary = {g: report(r, g) for g, r in groups.items()}
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Research\New Idea Sep part-2\scripts\aggregate_road.py", line 99, in <dictcomp>
+    summary = {g: report(r, g) for g, r in groups.items()}
+                  ^^^^^^^^^^^^
+  File "D:\Research\New Idea Sep part-2\scripts\aggregate_road.py", line 56, in report
+    zs = [np.load(latest(r) / "test_preds.npz") for r in runs]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Research\New Idea Sep part-2\scripts\aggregate_road.py", line 56, in <listcomp>
+    zs = [np.load(latest(r) / "test_preds.npz") for r in runs]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Research\New Idea Sep part-2\.venv\Lib\site-packages\numpy\lib\_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'experiments\\road_v2_graph_fold0\\20260922-234513\\test_preds.npz'

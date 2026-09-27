@@ -1,0 +1,33 @@
+54 files, 1062639 training windows, 12 features/frame
+params=82945
+ep 0 loss 0.0837 5s
+ep 1 loss 0.0058 4s
+ep 2 loss 0.0049 4s
+ep 3 loss 0.0053 4s
+ep 4 loss 0.0026 4s
+ep 5 loss 0.0031 4s
+ep 6 loss 0.0026 3s
+ep 7 loss 0.0028 4s
+ep 8 loss 0.0014 4s
+ep 9 loss 0.0026 4s
+ep 10 loss 0.0015 4s
+ep 11 loss 0.0014 4s
+ep 12 loss 0.0016 4s
+ep 13 loss 0.0015 4s
+ep 14 loss 0.0015 4s
+
+test set                               calibration      events    FA/h   duty  lat ms
+test_01_known_vehicle_known_attack     known-clean@5   11/12      25.3   1.9%     200 [BUDGET VIOLATED]
+test_01_known_vehicle_known_attack     known-clean@30  11/12     163.7   7.7%     200 [BUDGET VIOLATED]
+test_01_known_vehicle_known_attack     target-own@5    11/12       1.7   0.0%     200 
+test_01_known_vehicle_known_attack     target-own@30   11/12       1.7   0.0%     200 
+test_02_unknown_vehicle_known_attack   known-clean@5   12/12     216.5   1.3%     200 [BUDGET VIOLATED]
+test_02_unknown_vehicle_known_attack   known-clean@30  12/12     580.7  74.0%       0 [BUDGET VIOLATED]
+test_02_unknown_vehicle_known_attack   target-own@5    12/12       2.5   0.0%     200 
+test_02_unknown_vehicle_known_attack   target-own@30   12/12      28.0   0.1%     200 
+test_06_masquerade                     known-clean@5    3/8        0.0   0.0%     300 
+test_06_masquerade                     known-clean@30   4/8       40.6   1.3%     250 
+test_06_masquerade                     target-own@5     4/8        0.0   0.0%    2300 
+test_06_masquerade                     target-own@30    4/8       10.2   0.1%     450 
+
+saved -> experiments\id_agnostic\s2.json

@@ -1,0 +1,131 @@
+
+##### fold 0
+  test  correlated_signal_attack_1
+  test  correlated_signal_attack_1_masquerade
+  val   correlated_signal_attack_2
+  val   correlated_signal_attack_2_masquerade
+  train correlated_signal_attack_3
+  train correlated_signal_attack_3_masquerade
+  test  fuzzing_attack_1
+  val   fuzzing_attack_2
+  train fuzzing_attack_3
+  test  max_engine_coolant_temp_attack
+  test  max_engine_coolant_temp_attack_masquerade
+  test  max_speedometer_attack_1
+  test  max_speedometer_attack_1_masquerade
+  val   max_speedometer_attack_2
+  val   max_speedometer_attack_2_masquerade
+  train max_speedometer_attack_3
+  train max_speedometer_attack_3_masquerade
+  test  reverse_light_off_attack_1
+  test  reverse_light_off_attack_1_masquerade
+  val   reverse_light_off_attack_2
+  val   reverse_light_off_attack_2_masquerade
+  train reverse_light_off_attack_3
+  train reverse_light_off_attack_3_masquerade
+  test  reverse_light_on_attack_1
+  test  reverse_light_on_attack_1_masquerade
+  val   reverse_light_on_attack_2
+  val   reverse_light_on_attack_2_masquerade
+  train reverse_light_on_attack_3
+  train reverse_light_on_attack_3_masquerade
+train 33844 val 9830 test 10636 windows; features (107, 32)
+  rate         test AUC 0.7824  F1 0.7001  FPR 0.0161
+  surprise     test AUC 0.6970  F1 0.4892  FPR 0.1719
+  window_gbdt  test AUC 0.9270  F1 0.5629  FPR 0.1074
+
+##### fold 1
+  train correlated_signal_attack_1
+  train correlated_signal_attack_1_masquerade
+  test  correlated_signal_attack_2
+  test  correlated_signal_attack_2_masquerade
+  val   correlated_signal_attack_3
+  val   correlated_signal_attack_3_masquerade
+  train fuzzing_attack_1
+  test  fuzzing_attack_2
+  val   fuzzing_attack_3
+  train max_engine_coolant_temp_attack
+  train max_engine_coolant_temp_attack_masquerade
+  train max_speedometer_attack_1
+  train max_speedometer_attack_1_masquerade
+  test  max_speedometer_attack_2
+  test  max_speedometer_attack_2_masquerade
+  val   max_speedometer_attack_3
+  val   max_speedometer_attack_3_masquerade
+  train reverse_light_off_attack_1
+  train reverse_light_off_attack_1_masquerade
+  test  reverse_light_off_attack_2
+  test  reverse_light_off_attack_2_masquerade
+  val   reverse_light_off_attack_3
+  val   reverse_light_off_attack_3_masquerade
+  train reverse_light_on_attack_1
+  train reverse_light_on_attack_1_masquerade
+  test  reverse_light_on_attack_2
+  test  reverse_light_on_attack_2_masquerade
+  val   reverse_light_on_attack_3
+  val   reverse_light_on_attack_3_masquerade
+train 34041 val 10255 test 10014 windows; features (107, 32)
+  rate         test AUC 0.7377  F1 0.6484  FPR 0.0167
+  surprise     test AUC 0.6143  F1 0.4970  FPR 0.1256
+  window_gbdt  test AUC 0.9672  F1 0.8608  FPR 0.0672
+
+##### fold 2
+  val   correlated_signal_attack_1
+  val   correlated_signal_attack_1_masquerade
+  train correlated_signal_attack_2
+  train correlated_signal_attack_2_masquerade
+  test  correlated_signal_attack_3
+  test  correlated_signal_attack_3_masquerade
+  val   fuzzing_attack_1
+  train fuzzing_attack_2
+  test  fuzzing_attack_3
+  val   max_engine_coolant_temp_attack
+  val   max_engine_coolant_temp_attack_masquerade
+  val   max_speedometer_attack_1
+  val   max_speedometer_attack_1_masquerade
+  train max_speedometer_attack_2
+  train max_speedometer_attack_2_masquerade
+  test  max_speedometer_attack_3
+  test  max_speedometer_attack_3_masquerade
+  val   reverse_light_off_attack_1
+  val   reverse_light_off_attack_1_masquerade
+  train reverse_light_off_attack_2
+  train reverse_light_off_attack_2_masquerade
+  test  reverse_light_off_attack_3
+  test  reverse_light_off_attack_3_masquerade
+  val   reverse_light_on_attack_1
+  val   reverse_light_on_attack_1_masquerade
+  train reverse_light_on_attack_2
+  train reverse_light_on_attack_2_masquerade
+  test  reverse_light_on_attack_3
+  test  reverse_light_on_attack_3_masquerade
+train 33419 val 10452 test 10439 windows; features (107, 32)
+  rate         test AUC 0.7428  F1 0.6453  FPR 0.0355
+  surprise     test AUC 0.7359  F1 0.6074  FPR 0.1197
+  window_gbdt  test AUC 0.8469  F1 0.7798  FPR 0.1162
+
+=== rate (pooled 3 folds) AUC 0.7526 AUC-PR 0.5284 F1 0.6605 FPR 0.0226 | false alarms 771.5/h
+   correlated_signal_attack         detected 5/6  median latency 100 ms
+   fuzzing_attack                   detected 3/3  median latency 0 ms
+   max_engine_coolant_temp_attack   detected 2/2  median latency 0 ms
+   max_speedometer_attack           detected 5/6  median latency 0 ms
+   reverse_light_off_attack         detected 4/6  median latency 50 ms
+   reverse_light_on_attack          detected 6/6  median latency 150 ms
+
+=== surprise (pooled 3 folds) AUC 0.6806 AUC-PR 0.3172 F1 0.5349 FPR 0.1406 | false alarms 6269.4/h
+   correlated_signal_attack         detected 6/6  median latency 0 ms
+   fuzzing_attack                   detected 3/3  median latency 0 ms
+   max_engine_coolant_temp_attack   detected 2/2  median latency 0 ms
+   max_speedometer_attack           detected 6/6  median latency 0 ms
+   reverse_light_off_attack         detected 0/6  median latency nan ms
+   reverse_light_on_attack          detected 0/6  median latency nan ms
+
+=== window_gbdt (pooled 3 folds) AUC 0.8824 AUC-PR 0.6477 F1 0.7536 FPR 0.0977 | false alarms 159.1/h
+   correlated_signal_attack         detected 6/6  median latency 0 ms
+   fuzzing_attack                   detected 3/3  median latency 0 ms
+   max_engine_coolant_temp_attack   detected 0/2  median latency nan ms
+   max_speedometer_attack           detected 6/6  median latency 0 ms
+   reverse_light_off_attack         detected 6/6  median latency 0 ms
+   reverse_light_on_attack          detected 6/6  median latency 0 ms
+
+saved -> experiments\road_detectors\summary.json

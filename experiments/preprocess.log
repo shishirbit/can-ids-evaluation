@@ -1,0 +1,116 @@
+reading DoS_dataset.csv ...
+{
+ "name": "DoS_dataset",
+ "frames": 3665771,
+ "duration_s": 2832.7,
+ "unique_ids": 27,
+ "attack_frames": 587521,
+ "attack_frac": 0.1603,
+ "attack_ids": [
+  "0x0"
+ ],
+ "episodes": 300,
+ "episode_len_s": [
+  4.41,
+  4.56,
+  4.85
+ ],
+ "gap_s(min/med/max)": [
+  3.0,
+  3.0,
+  3.16
+ ],
+ "gap_cv": 0.003
+}
+reading Fuzzy_dataset.csv ...
+{
+ "name": "Fuzzy_dataset",
+ "frames": 3838860,
+ "duration_s": 5487.2,
+ "unique_ids": 2048,
+ "attack_frames": 491847,
+ "attack_frac": 0.1281,
+ "attack_ids": [
+  "0x0",
+  "0x1",
+  "0x2",
+  "0x3",
+  "0x4",
+  "0x5",
+  "0x6",
+  "0x7",
+  "0x8",
+  "0x9"
+ ],
+ "episodes": 300,
+ "episode_len_s": [
+  4.9,
+  5.19,
+  5.99
+ ],
+ "gap_s(min/med/max)": [
+  3.0,
+  3.01,
+  3.05
+ ],
+ "gap_cv": 0.003
+}
+reading gear_dataset.csv ...
+{
+ "name": "gear_dataset",
+ "frames": 4443142,
+ "duration_s": 8019.0,
+ "unique_ids": 26,
+ "attack_frames": 597252,
+ "attack_frac": 0.1344,
+ "attack_ids": [
+  "0x43f"
+ ],
+ "episodes": 300,
+ "episode_len_s": [
+  3.38,
+  3.44,
+  3.55
+ ],
+ "gap_s(min/med/max)": [
+  3.0,
+  3.01,
+  3.02
+ ],
+ "gap_cv": 0.001
+}
+reading RPM_dataset.csv ...
+{
+ "name": "RPM_dataset",
+ "frames": 4621702,
+ "duration_s": 10179.0,
+ "unique_ids": 26,
+ "attack_frames": 654897,
+ "attack_frac": 0.1417,
+ "attack_ids": [
+  "0x316"
+ ],
+ "episodes": 300,
+ "episode_len_s": [
+  3.41,
+  3.46,
+  3.57
+ ],
+ "gap_s(min/med/max)": [
+  3.0,
+  3.0,
+  3.04
+ ],
+ "gap_cv": 0.001
+}
+reading normal_run_data.txt ...
+{
+ "name": "normal_run_data",
+ "frames": 988871,
+ "duration_s": 506.4,
+ "unique_ids": 27,
+ "attack_frames": 0,
+ "attack_frac": 0.0,
+ "attack_ids": []
+}
+saved 5 logs -> data\processed\car_hacking

@@ -1,0 +1,262 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_01",
+    "minutes": [
+      0.0,
+      1.0,
+      5.0,
+      15.0
+    ],
+    "payload": false,
+    "epochs": 10,
+    "max_steps": 400,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 0,
+    "out": "experiments/per_vehicle_calib"
+  },
+  "results": {
+    "0.0min|A->B|5": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "threshold": 1.000001,
+      "valid": true,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "0.0min|A->B|30": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "threshold": 1.000001,
+      "valid": true,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "0.0min|B->A|5": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "threshold": 1.000001,
+      "valid": true,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "0.0min|B->A|30": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "threshold": 1.000001,
+      "valid": true,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "1.0min|A->B|5": {
+      "detected": 1,
+      "events": 4,
+      "fa_per_h": 391.3543931449034,
+      "duty": 0.03683335464893209,
+      "threshold": 0.00031720803235657513,
+      "valid": false,
+      "median_latency_ms": 400.0,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "1.0min|A->B|30": {
+      "detected": 1,
+      "events": 4,
+      "fa_per_h": 391.3543931449034,
+      "duty": 0.03683335464893209,
+      "threshold": 0.00031720803235657513,
+      "valid": false,
+      "median_latency_ms": 400.0,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "1.0min|B->A|5": {
+      "detected": 3,
+      "events": 4,
+      "fa_per_h": 174.62686567164178,
+      "duty": 0.017350746268656715,
+      "threshold": 0.0005543898441828787,
+      "valid": false,
+      "median_latency_ms": 300.00000000000006,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "1.0min|B->A|30": {
+      "detected": 3,
+      "events": 4,
+      "fa_per_h": 174.62686567164178,
+      "duty": 0.017350746268656715,
+      "threshold": 0.0005543898441828787,
+      "valid": false,
+      "median_latency_ms": 300.00000000000006,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "5.0min|A->B|5": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 36.83335464893209,
+      "duty": 0.003197339813275355,
+      "threshold": 0.005445647519081831,
+      "valid": false,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 5.0,
+      "n_ids": 108
+    },
+    "5.0min|A->B|30": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 36.83335464893209,
+      "duty": 0.003197339813275355,
+      "threshold": 0.005445647519081831,
+      "valid": true,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 5.0,
+      "n_ids": 108
+    },
+    "5.0min|B->A|5": {
+      "detected": 1,
+      "events": 4,
+      "fa_per_h": 40.298507462686565,
+      "duty": 0.0018656716417910447,
+      "threshold": 0.0021913719829171896,
+      "valid": false,
+      "median_latency_ms": 124600.00000000001,
+      "adapt_minutes_used": 5.0,
+      "n_ids": 108
+    },
+    "5.0min|B->A|30": {
+      "detected": 1,
+      "events": 4,
+      "fa_per_h": 40.298507462686565,
+      "duty": 0.0018656716417910447,
+      "threshold": 0.0021913719829171896,
+      "valid": true,
+      "median_latency_ms": 124600.00000000001,
+      "adapt_minutes_used": 5.0,
+      "n_ids": 108
+    },
+    "15.0min|A->B|5": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 64.45837063563114,
+      "duty": 0.005371530886302597,
+      "threshold": 0.0005169500946067274,
+      "valid": false,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 15.0,
+      "n_ids": 108
+    },
+    "15.0min|A->B|30": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 64.45837063563114,
+      "duty": 0.005371530886302597,
+      "threshold": 0.0005169500946067274,
+      "valid": true,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 15.0,
+      "n_ids": 108
+    },
+    "15.0min|B->A|5": {
+      "detected": 3,
+      "events": 4,
+      "fa_per_h": 248.50746268656715,
+      "duty": 0.022761194029850745,
+      "threshold": 0.0008010955643840134,
+      "valid": false,
+      "median_latency_ms": 600.0000000000001,
+      "adapt_minutes_used": 15.0,
+      "n_ids": 108
+    },
+    "15.0min|B->A|30": {
+      "detected": 3,
+      "events": 4,
+      "fa_per_h": 376.1194029850746,
+      "duty": 0.0416044776119403,
+      "threshold": 0.0003637001209426671,
+      "valid": false,
+      "median_latency_ms": 300.00000000000006,
+      "adapt_minutes_used": 15.0,
+      "n_ids": 108
+    }
+  },
+  "summary": {
+    "0.0": {
+      "5": {
+        "detected": 0,
+        "events": 8,
+        "duty": 0.0,
+        "detected_valid": 0,
+        "events_valid": 8
+      },
+      "30": {
+        "detected": 0,
+        "events": 8,
+        "duty": 0.0,
+        "detected_valid": 0,
+        "events_valid": 8
+      }
+    },
+    "1.0": {
+      "5": {
+        "detected": 4,
+        "events": 8,
+        "duty": 0.0270920504587944,
+        "detected_valid": 0,
+        "events_valid": 0
+      },
+      "30": {
+        "detected": 4,
+        "events": 8,
+        "duty": 0.0270920504587944,
+        "detected_valid": 0,
+        "events_valid": 0
+      }
+    },
+    "5.0": {
+      "5": {
+        "detected": 1,
+        "events": 8,
+        "duty": 0.0025315057275332,
+        "detected_valid": 0,
+        "events_valid": 0
+      },
+      "30": {
+        "detected": 1,
+        "events": 8,
+        "duty": 0.0025315057275332,
+        "detected_valid": 1,
+        "events_valid": 8
+      }
+    },
+    "15.0": {
+      "5": {
+        "detected": 3,
+        "events": 8,
+        "duty": 0.014066362458076671,
+        "detected_valid": 0,
+        "events_valid": 0
+      },
+      "30": {
+        "detected": 3,
+        "events": 8,
+        "duty": 0.023488004249121446,
+        "detected_valid": 0,
+        "events_valid": 4
+      }
+    }
+  }
+}

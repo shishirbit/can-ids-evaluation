@@ -1,0 +1,206 @@
+[
+  {
+    "pair": "Impala -> Silverado",
+    "test": "known",
+    "id_based_at5": "-",
+    "residual_at5": [
+      6.666666666666667,
+      0.4714045207910317,
+      8
+    ],
+    "relative_at5": [
+      7.0,
+      0.0,
+      8
+    ],
+    "relative_fa_per_h": 1.152516327314637,
+    "residual_fa_per_h": 2.305032654629274
+  },
+  {
+    "pair": "Impala -> Silverado",
+    "test": "unknown",
+    "id_based_at5": "-",
+    "residual_at5": [
+      2.6666666666666665,
+      0.4714045207910317,
+      8
+    ],
+    "relative_at5": [
+      6.333333333333333,
+      1.699673171197595,
+      8
+    ],
+    "relative_fa_per_h": 0.0,
+    "residual_fa_per_h": 1.113275814082939
+  },
+  {
+    "pair": "Impala -> Silverado",
+    "test": "masq",
+    "id_based_at5": "-",
+    "residual_at5": [
+      0.0,
+      0.0,
+      7
+    ],
+    "relative_at5": [
+      0.0,
+      0.0,
+      7
+    ],
+    "relative_fa_per_h": 0.0,
+    "residual_fa_per_h": 0.0
+  },
+  {
+    "pair": "Traverse -> Forester",
+    "test": "known",
+    "id_based_at5": "10/12",
+    "residual_at5": [
+      8.333333333333334,
+      0.9428090415820634,
+      12
+    ],
+    "relative_at5": [
+      10.666666666666666,
+      0.4714045207910317,
+      12
+    ],
+    "relative_fa_per_h": 1.1252285620516669,
+    "residual_fa_per_h": 1.6878428430775003
+  },
+  {
+    "pair": "Traverse -> Forester",
+    "test": "unknown",
+    "id_based_at5": "0/12",
+    "residual_at5": [
+      12.0,
+      0.0,
+      12
+    ],
+    "relative_at5": [
+      12.0,
+      0.0,
+      12
+    ],
+    "relative_fa_per_h": 2.5470496674685155,
+    "residual_fa_per_h": 1.698033111645677
+  },
+  {
+    "pair": "Traverse -> Forester",
+    "test": "masq",
+    "id_based_at5": "7/8",
+    "residual_at5": [
+      4.333333333333333,
+      0.9428090415820634,
+      8
+    ],
+    "relative_at5": [
+      3.0,
+      0.816496580927726,
+      8
+    ],
+    "relative_fa_per_h": 0.0,
+    "residual_fa_per_h": 0.0
+  },
+  {
+    "pair": "Silverado -> Forester",
+    "test": "known",
+    "id_based_at5": "9/10",
+    "residual_at5": [
+      9.0,
+      0.0,
+      10
+    ],
+    "relative_at5": [
+      9.0,
+      0.0,
+      10
+    ],
+    "relative_fa_per_h": 0.9416195856873824,
+    "residual_fa_per_h": 0.9416195856873824
+  },
+  {
+    "pair": "Silverado -> Forester",
+    "test": "unknown",
+    "id_based_at5": "0/10",
+    "residual_at5": [
+      10.0,
+      0.0,
+      10
+    ],
+    "relative_at5": [
+      10.0,
+      0.0,
+      10
+    ],
+    "relative_fa_per_h": 0.0,
+    "residual_fa_per_h": 0.0
+  },
+  {
+    "pair": "Silverado -> Forester",
+    "test": "masq",
+    "id_based_at5": "0/8",
+    "residual_at5": [
+      3.0,
+      0.0,
+      4
+    ],
+    "relative_at5": [
+      1.6666666666666667,
+      1.247219128924647,
+      4
+    ],
+    "relative_fa_per_h": 1.8635469510301268,
+    "residual_fa_per_h": 3.1059115850502113
+  },
+  {
+    "pair": "Forester -> Traverse",
+    "test": "known",
+    "id_based_at5": "14/14",
+    "residual_at5": [
+      8.666666666666666,
+      0.9428090415820634,
+      12
+    ],
+    "relative_at5": [
+      10.666666666666666,
+      0.4714045207910317,
+      12
+    ],
+    "relative_fa_per_h": 0.0,
+    "residual_fa_per_h": 0.0
+  },
+  {
+    "pair": "Forester -> Traverse",
+    "test": "unknown",
+    "id_based_at5": "0/14",
+    "residual_at5": [
+      5.666666666666667,
+      0.4714045207910317,
+      14
+    ],
+    "relative_at5": [
+      6.0,
+      0.0,
+      14
+    ],
+    "relative_fa_per_h": 2.736602052451539,
+    "residual_fa_per_h": 0.4561003420752565
+  },
+  {
+    "pair": "Forester -> Traverse",
+    "test": "masq",
+    "id_based_at5": "5/8",
+    "residual_at5": [
+      3.0,
+      0.0,
+      7
+    ],
+    "relative_at5": [
+      0.0,
+      0.0,
+      7
+    ],
+    "relative_fa_per_h": 0.0,
+    "residual_fa_per_h": 0.0
+  }
+]

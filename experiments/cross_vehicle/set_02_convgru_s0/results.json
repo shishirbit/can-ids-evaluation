@@ -1,0 +1,904 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_02",
+    "payload": false,
+    "frames": 64,
+    "stride": 16,
+    "epochs": 15,
+    "max_steps": 600,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 0,
+    "out": "experiments/cross_vehicle"
+  },
+  "results": {
+    "test_01_known_vehicle_known_attack|known-clean|5": {
+      "threshold": 0.9989137649536133,
+      "detected": 8,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "median_latency_ms": 200.0,
+      "rows": [
+        {
+          "name": "test_01_known_vehicle_known_attack/double-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/double-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-4",
+          "detected": true,
+          "latency_ms": 400.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-4",
+          "detected": true,
+          "latency_ms": 300.00000000000006,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_01_known_vehicle_known_attack|known-clean|30": {
+      "threshold": 0.18027788400650024,
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 40.6714009038089,
+      "duty": 0.002905100064557779,
+      "median_latency_ms": 200.0,
+      "rows": [
+        {
+          "name": "test_01_known_vehicle_known_attack/double-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/double-4",
+          "detected": true,
+          "latency_ms": 100.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-3",
+          "detected": true,
+          "latency_ms": 1600.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-4",
+          "detected": true,
+          "latency_ms": 1000.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-4",
+          "detected": true,
+          "latency_ms": 400.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-3",
+          "detected": true,
+          "latency_ms": 28000.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        }
+      ]
+    },
+    "test_01_known_vehicle_known_attack|target-own|5": {
+      "threshold": 0.9426066279411316,
+      "detected": 10,
+      "events": 12,
+      "fa_per_h": 1.4525500322788893,
+      "duty": 8.069722401549386e-05,
+      "median_latency_ms": 200.0,
+      "rows": [
+        {
+          "name": "test_01_known_vehicle_known_attack/double-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/double-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-3",
+          "detected": true,
+          "latency_ms": 1600.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-4",
+          "detected": true,
+          "latency_ms": 700.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_01_known_vehicle_known_attack|target-own|30": {
+      "threshold": 0.564678966999054,
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 10.167850225952225,
+      "duty": 0.0005648805681084571,
+      "median_latency_ms": 200.0,
+      "rows": [
+        {
+          "name": "test_01_known_vehicle_known_attack/double-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/double-4",
+          "detected": true,
+          "latency_ms": 100.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/fuzzing-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-3",
+          "detected": true,
+          "latency_ms": 1600.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/interval-4",
+          "detected": true,
+          "latency_ms": 1000.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/speed-4",
+          "detected": true,
+          "latency_ms": 700.0000000000001,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-3",
+          "detected": true,
+          "latency_ms": 28100.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/systematic-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-3",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_01_known_vehicle_known_attack/triple-4",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_02_unknown_vehicle_known_attack|known-clean|5": {
+      "threshold": 0.9989137649536133,
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 24.359986466674187,
+      "duty": 0.9986466674185182,
+      "median_latency_ms": 0.0,
+      "rows": [
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        }
+      ]
+    },
+    "test_02_unknown_vehicle_known_attack|known-clean|30": {
+      "threshold": 0.18027788400650024,
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 24.359986466674187,
+      "duty": 0.9986466674185182,
+      "median_latency_ms": 0.0,
+      "rows": [
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-3",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-4",
+          "detected": true,
+          "latency_ms": 0.0,
+          "alarm_before_onset": true
+        }
+      ]
+    },
+    "test_02_unknown_vehicle_known_attack|target-own|5": {
+      "threshold": 1.000001,
+      "detected": 0,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "median_latency_ms": null,
+      "rows": [
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_02_unknown_vehicle_known_attack|target-own|30": {
+      "threshold": 1.000001,
+      "detected": 0,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "median_latency_ms": null,
+      "rows": [
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/double-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/fuzzing-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/interval-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/speed-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/systematic-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_02_unknown_vehicle_known_attack/triple-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_06_masquerade|known-clean|5": {
+      "threshold": 0.9989137649536133,
+      "detected": 4,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "median_latency_ms": 3800.0,
+      "rows": [
+        {
+          "name": "test_06_masquerade/masquerade-timed-1",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-2",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-3",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-4",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-1",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-2",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-3",
+          "detected": true,
+          "latency_ms": 7400.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-4",
+          "detected": true,
+          "latency_ms": 7800.000000000001,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_06_masquerade|known-clean|30": {
+      "threshold": 0.18027788400650024,
+      "detected": 8,
+      "events": 8,
+      "fa_per_h": 17.08185053380783,
+      "duty": 0.0011862396204033216,
+      "median_latency_ms": 950.0000000000002,
+      "rows": [
+        {
+          "name": "test_06_masquerade/masquerade-timed-1",
+          "detected": true,
+          "latency_ms": 74800.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-2",
+          "detected": true,
+          "latency_ms": 1200.0000000000002,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-3",
+          "detected": true,
+          "latency_ms": 5200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-4",
+          "detected": true,
+          "latency_ms": 600.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-1",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-2",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-3",
+          "detected": true,
+          "latency_ms": 700.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-4",
+          "detected": true,
+          "latency_ms": 1300.0,
+          "alarm_before_onset": true
+        }
+      ]
+    },
+    "test_06_masquerade|target-own|5": {
+      "threshold": 0.4926823079586029,
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "median_latency_ms": 700.0000000000001,
+      "rows": [
+        {
+          "name": "test_06_masquerade/masquerade-timed-1",
+          "detected": true,
+          "latency_ms": 130600.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-2",
+          "detected": false,
+          "latency_ms": NaN,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-3",
+          "detected": true,
+          "latency_ms": 9400.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-4",
+          "detected": true,
+          "latency_ms": 600.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-1",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-2",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-3",
+          "detected": true,
+          "latency_ms": 700.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-4",
+          "detected": true,
+          "latency_ms": 1300.0,
+          "alarm_before_onset": false
+        }
+      ]
+    },
+    "test_06_masquerade|target-own|30": {
+      "threshold": 0.1127673014998436,
+      "detected": 8,
+      "events": 8,
+      "fa_per_h": 25.622775800711743,
+      "duty": 0.0018979833926453143,
+      "median_latency_ms": 650.0000000000001,
+      "rows": [
+        {
+          "name": "test_06_masquerade/masquerade-timed-1",
+          "detected": true,
+          "latency_ms": 74800.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-2",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-3",
+          "detected": true,
+          "latency_ms": 5200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-timed-4",
+          "detected": true,
+          "latency_ms": 600.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-1",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-2",
+          "detected": true,
+          "latency_ms": 200.0,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-3",
+          "detected": true,
+          "latency_ms": 700.0000000000001,
+          "alarm_before_onset": false
+        },
+        {
+          "name": "test_06_masquerade/masquerade-untimed-4",
+          "detected": true,
+          "latency_ms": 1300.0,
+          "alarm_before_onset": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+﻿{'name': 'Fuzzy_dataset#seg0', 'frames': 2947792, 'duration_s': 2466.0, 'unique_ids': 2048, 'attack_frames': 491847, 'attack_frac': 0.1669, 'attack_ids': ['0x0', '0x1', '0x2', '0x3', '0x4', '0x5', '0x6', '0x7', '0x8', '0x9']}
+{'name': 'Fuzzy_dataset#seg1', 'frames': 891068, 'duration_s': 481.6, 'unique_ids': 26, 'attack_frames': 0, 'attack_frac': 0.0, 'attack_ids': []}
+nodes=31 windows=[24661, 4817]
+{'train': 20375, 'val': 4202, 'test': 4243}
+  train positive rate per horizon: [0.541 0.645 0.747 0.841 0.841]
+  val positive rate per horizon: [0.551 0.656 0.76  0.854 0.854]
+  test positive rate per horizon: [0.549 0.652 0.754 0.847 0.847]
+train positive rate per horizon: [0.541 0.645 0.747 0.841 0.841]
+params=1.04M
+ep   0 loss 0.2642 val_f1(mean over horizons) 0.9538 [1.000, 0.933, 0.939, 0.949, 0.949] 15.0s
+ep   1 loss 0.2374 val_f1(mean over horizons) 0.9562 [1.000, 0.936, 0.944, 0.951, 0.950] 15.0s
+ep   2 loss 0.2280 val_f1(mean over horizons) 0.9551 [1.000, 0.933, 0.942, 0.951, 0.951] 14.9s
+ep   3 loss 0.2165 val_f1(mean over horizons) 0.9578 [1.000, 0.939, 0.942, 0.954, 0.954] 15.6s
+ep   4 loss 0.2114 val_f1(mean over horizons) 0.9582 [1.000, 0.938, 0.946, 0.954, 0.954] 15.1s
+ep   5 loss 0.2076 val_f1(mean over horizons) 0.9576 [1.000, 0.936, 0.945, 0.953, 0.953] 15.8s
+ep   6 loss 0.2051 val_f1(mean over horizons) 0.9587 [1.000, 0.938, 0.947, 0.954, 0.954] 15.5s
+ep   7 loss 0.2047 val_f1(mean over horizons) 0.9616 [1.000, 0.943, 0.951, 0.957, 0.957] 15.2s
+ep   8 loss 0.2029 val_f1(mean over horizons) 0.9548 [1.000, 0.932, 0.942, 0.950, 0.950] 14.6s
+ep   9 loss 0.2019 val_f1(mean over horizons) 0.9551 [1.000, 0.932, 0.942, 0.951, 0.951] 14.8s
+ep  10 loss 0.2103 val_f1(mean over horizons) 0.9569 [1.000, 0.936, 0.944, 0.952, 0.952] 14.7s
+ep  11 loss 0.2070 val_f1(mean over horizons) 0.9583 [0.999, 0.937, 0.945, 0.955, 0.955] 15.0s
+ep  12 loss 0.2030 val_f1(mean over horizons) 0.9471 [1.000, 0.919, 0.932, 0.942, 0.942] 15.4s
+ep  13 loss 0.2027 val_f1(mean over horizons) 0.9449 [1.000, 0.916, 0.929, 0.940, 0.940] 15.0s
+ep  14 loss 0.2012 val_f1(mean over horizons) 0.9524 [1.000, 0.930, 0.938, 0.947, 0.947] 16.0s
+ep  15 loss 0.2006 val_f1(mean over horizons) 0.9532 [1.000, 0.930, 0.941, 0.948, 0.948] 15.6s
+ep  16 loss 0.2000 val_f1(mean over horizons) 0.9543 [1.000, 0.932, 0.942, 0.949, 0.949] 15.6s
+ep  17 loss 0.1991 val_f1(mean over horizons) 0.9538 [1.000, 0.931, 0.941, 0.949, 0.949] 15.0s
+early stop
+
+=== sttf (test) ===
+ horizon     subset   pos%       f1  auc_roc   auc_pr    brier      fpr      fnr      mcc
+      0s        all  54.87   0.9948   1.0000   1.0000   0.0009   0.0000   0.0103   0.9887
+      0s  pre_onset   0.00   0.0000      nan      nan   0.0005   0.0000   0.0000      nan
+      1s        all  65.24   0.9421   0.9703   0.9812   0.0681   0.0685   0.0770   0.8411
+      1s  pre_onset  22.98   0.5911   0.8511   0.5908   0.1484   0.0685   0.4841   0.4996
+      2s        all  75.44   0.9472   0.9559   0.9798   0.0709   0.1324   0.0615   0.7915
+      2s  pre_onset  45.59   0.8014   0.8765   0.8196   0.1513   0.1324   0.2257   0.6467
+      5s        all  84.70   0.9553   0.9256   0.9801   0.0753   0.1849   0.0551   0.7260
+      5s  pre_onset  66.11   0.8704   0.8471   0.8998   0.1563   0.1849   0.1564   0.6425
+      9s        all  84.70   0.9553   0.9229   0.9777   0.0751   0.1849   0.0551   0.7260
+      9s  pre_onset  66.11   0.8704   0.8581   0.9094   0.1557   0.1849   0.1564   0.6425
+
+=== persistence (test) ===
+ horizon     subset   pos%       f1  auc_roc   auc_pr    brier      fpr      fnr      mcc
+      0s        all  54.87   1.0000   1.0000   1.0000   0.0000   0.0000   0.0000   1.0000
+      0s  pre_onset   0.00   0.0000      nan      nan   0.0000   0.0000   0.0000      nan
+      1s        all  65.24   0.9137   0.9205   0.9447   0.1037   0.0000   0.1590   0.8049
+      1s  pre_onset  22.98   0.0000   0.5000   0.2298   0.2298   0.0000   1.0000   0.0000
+      2s        all  75.44   0.8421   0.8636   0.9330   0.2058   0.0000   0.2727   0.6291
+      2s  pre_onset  45.59   0.0000   0.5000   0.4559   0.4559   0.0000   1.0000   0.0000
+      5s        all  84.70   0.7862   0.8239   0.9461   0.2984   0.0000   0.3523   0.4685
+      5s  pre_onset  66.11   0.0000   0.5000   0.6611   0.6611   0.0000   1.0000   0.0000
+      9s        all  84.70   0.7862   0.8239   0.9461   0.2984   0.0000   0.3523   0.4685
+      9s  pre_onset  66.11   0.0000   0.5000   0.6611   0.6611   0.0000   1.0000   0.0000
+
+=== periodicity (test) ===
+ horizon     subset   pos%       f1  auc_roc   auc_pr    brier      fpr      fnr      mcc
+      0s        all  54.87   1.0000   1.0000   1.0000   0.0072   0.0000   0.0000   1.0000
+      0s  pre_onset   0.00   0.0000      nan      nan   0.0154   0.0000   0.0000      nan
+      1s        all  65.24   0.9137   0.9093   0.9607   0.1314   0.0000   0.1590   0.8049
+      1s  pre_onset  22.98   0.0000   0.4293   0.2120   0.2727   0.0000   1.0000   0.0000
+      2s        all  75.44   0.9390   0.8933   0.9650   0.0849   0.3925   0.0019   0.7288
+      2s  pre_onset  45.59   0.8069   0.6087   0.4814   0.1766   0.3925   0.0069   0.6344
+      5s        all  84.70   0.9978   0.9817   0.9956   0.0038   0.0247   0.0000   0.9854
+      5s  pre_onset  66.11   0.9937   0.9933   0.9955   0.0084   0.0247   0.0000   0.9814
+      9s        all  84.70   0.9978   0.9817   0.9956   0.0038   0.0247   0.0000   0.9854
+      9s  pre_onset  66.11   0.9937   0.9933   0.9955   0.0084   0.0247   0.0000   0.9814
+
+MC-dropout mean predictive variance: 0.00144
+saved -> experiments\fuzzy\20260922-173724

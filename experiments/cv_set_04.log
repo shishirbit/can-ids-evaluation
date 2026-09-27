@@ -1,0 +1,38 @@
+vocab=55 (known vehicle only)
+62 files, 681374 training frame-windows
+ep 0 loss 0.0766 5s
+ep 1 loss 0.0266 4s
+ep 2 loss 0.0219 4s
+ep 3 loss 0.0182 4s
+ep 4 loss 0.0144 4s
+ep 5 loss 0.0120 4s
+ep 6 loss 0.0110 4s
+ep 7 loss 0.0078 4s
+ep 8 loss 0.0069 4s
+ep 9 loss 0.0067 4s
+ep 10 loss 0.0055 4s
+ep 11 loss 0.0047 4s
+ep 12 loss 0.0039 4s
+ep 13 loss 0.0037 4s
+ep 14 loss 0.0036 4s
+scored train_01_attack_free: 4 files
+scored train_02_with_attacks: 22 files
+scored test_01_known_vehicle_known_attack: 14 files
+scored test_02_unknown_vehicle_known_attack: 14 files
+scored test_06_masquerade: 8 files
+
+test set                               calibration    events    FA/h median ms
+test_01_known_vehicle_known_attack     known-clean@5  14/14     138.6       200
+test_01_known_vehicle_known_attack     known-clean@30  14/14     257.5       200
+test_01_known_vehicle_known_attack     target-own@5  14/14       5.0       200
+test_01_known_vehicle_known_attack     target-own@30  14/14      29.7       200
+test_02_unknown_vehicle_known_attack   known-clean@5  14/14      17.2         0
+test_02_unknown_vehicle_known_attack   known-clean@30  14/14      17.2         0
+test_02_unknown_vehicle_known_attack   target-own@5   0/14       0.0       nan
+test_02_unknown_vehicle_known_attack   target-own@30   0/14       0.0       nan
+test_06_masquerade                     known-clean@5   6/8       34.6      4400
+test_06_masquerade                     known-clean@30   6/8       86.5      1850
+test_06_masquerade                     target-own@5   5/8        0.0      7500
+test_06_masquerade                     target-own@30   5/8       17.3      7400
+
+saved -> experiments\cross_vehicle\set_04_convgru_s0

@@ -1,0 +1,124 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_01",
+    "minutes": [
+      0.0,
+      1.0
+    ],
+    "payload": false,
+    "epochs": 3,
+    "max_steps": 100,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 0,
+    "out": "experiments/pvc_smoke"
+  },
+  "results": {
+    "0.0min|A->B|5": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "threshold": 0.9999915361404419,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "0.0min|A->B|30": {
+      "detected": 0,
+      "events": 4,
+      "fa_per_h": 13.812507993349532,
+      "duty": 0.0010231487402481137,
+      "threshold": 0.9999914169311523,
+      "median_latency_ms": null,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "0.0min|B->A|5": {
+      "detected": 1,
+      "events": 4,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "threshold": 0.9999866485595703,
+      "median_latency_ms": 200.0,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "0.0min|B->A|30": {
+      "detected": 2,
+      "events": 4,
+      "fa_per_h": 13.432835820895521,
+      "duty": 0.0005597014925373135,
+      "threshold": 0.9999864101409912,
+      "median_latency_ms": 7150.000000000001,
+      "adapt_minutes_used": 0.0,
+      "n_ids": 52
+    },
+    "1.0min|A->B|5": {
+      "detected": 4,
+      "events": 4,
+      "fa_per_h": 589.3336743829134,
+      "duty": 0.15091443918659675,
+      "threshold": 0.013266344554722309,
+      "median_latency_ms": 1950.0000000000002,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "1.0min|A->B|30": {
+      "detected": 4,
+      "events": 4,
+      "fa_per_h": 589.3336743829134,
+      "duty": 0.15091443918659675,
+      "threshold": 0.013266344554722309,
+      "median_latency_ms": 1950.0000000000002,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "1.0min|B->A|5": {
+      "detected": 3,
+      "events": 4,
+      "fa_per_h": 53.731343283582085,
+      "duty": 0.002425373134328358,
+      "threshold": 0.00821130070835352,
+      "median_latency_ms": 200.0,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    },
+    "1.0min|B->A|30": {
+      "detected": 3,
+      "events": 4,
+      "fa_per_h": 53.731343283582085,
+      "duty": 0.002425373134328358,
+      "threshold": 0.00821130070835352,
+      "median_latency_ms": 200.0,
+      "adapt_minutes_used": 1.0,
+      "n_ids": 108
+    }
+  },
+  "summary": {
+    "0.0": {
+      "5": {
+        "detected": 1,
+        "events": 8,
+        "duty": 0.0
+      },
+      "30": {
+        "detected": 2,
+        "events": 8,
+        "duty": 0.0007914251163927135
+      }
+    },
+    "1.0": {
+      "5": {
+        "detected": 7,
+        "events": 8,
+        "duty": 0.07666990616046256
+      },
+      "30": {
+        "detected": 7,
+        "events": 8,
+        "duty": 0.07666990616046256
+      }
+    }
+  }
+}

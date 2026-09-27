@@ -1,0 +1,57 @@
+  val      ambient_dyno_drive_basic_long
+  train    ambient_dyno_drive_basic_short
+  val      ambient_dyno_drive_benign_anomaly
+  test     ambient_dyno_drive_extended_long
+  val      ambient_dyno_drive_extended_short
+  test     ambient_dyno_drive_radio_infotainment
+  test     ambient_dyno_drive_winter
+  train    ambient_dyno_idle_radio_infotainment
+  train    ambient_dyno_reverse
+  train    correlated_signal_attack_1
+  train    correlated_signal_attack_1_masquerade
+  test     correlated_signal_attack_2
+  test     correlated_signal_attack_2_masquerade
+  val      correlated_signal_attack_3
+  val      correlated_signal_attack_3_masquerade
+  train    fuzzing_attack_1
+  test     fuzzing_attack_2
+  val      fuzzing_attack_3
+  train    max_engine_coolant_temp_attack
+  train    max_engine_coolant_temp_attack_masquerade
+  train    max_speedometer_attack_1
+  train    max_speedometer_attack_1_masquerade
+  test     max_speedometer_attack_2
+  test     max_speedometer_attack_2_masquerade
+  val      max_speedometer_attack_3
+  val      max_speedometer_attack_3_masquerade
+  train    reverse_light_off_attack_1
+  train    reverse_light_off_attack_1_masquerade
+  test     reverse_light_off_attack_2
+  test     reverse_light_off_attack_2_masquerade
+  val      reverse_light_off_attack_3
+  val      reverse_light_off_attack_3_masquerade
+  train    reverse_light_on_attack_1
+  train    reverse_light_on_attack_1_masquerade
+  test     reverse_light_on_attack_2
+  test     reverse_light_on_attack_2_masquerade
+  val      reverse_light_on_attack_3
+  val      reverse_light_on_attack_3_masquerade
+{'train': 244733, 'val': 353639, 'test': 217111} n_ids=107
+ep 0 loss 0.1830 2s
+ep 1 loss 0.0488 2s
+ep 2 loss 0.0283 2s
+ep 3 loss 0.0196 2s
+ep 4 loss 0.0147 2s
+ep 5 loss 0.0117 2s
+ep 6 loss 0.0097 2s
+ep 7 loss 0.0082 2s
+ep 8 loss 0.0071 2s
+ep 9 loss 0.0062 2s
+ep 10 loss 0.0053 2s
+ep 11 loss 0.0045 2s
+ep 12 loss 0.0038 2s
+ep 13 loss 0.0031 2s
+ep 14 loss 0.0028 2s
+val: 12 sequences, 9 with attacks
+test: 12 sequences, 9 with attacks
+saved -> experiments\baseline_frames\frameae_fold1

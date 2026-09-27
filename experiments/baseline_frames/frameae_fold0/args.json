@@ -1,0 +1,13 @@
+{
+  "model": "frameae",
+  "road": "data/processed/road",
+  "fold": 0,
+  "frames": 64,
+  "stride": 16,
+  "epochs": 15,
+  "batch": 512,
+  "lr": 0.001,
+  "max_steps": 600,
+  "seed": 0,
+  "out": "experiments/baseline_frames"
+}

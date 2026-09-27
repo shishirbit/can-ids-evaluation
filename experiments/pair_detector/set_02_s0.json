@@ -1,0 +1,85 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_02",
+    "epochs": 15,
+    "max_steps": 600,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 0,
+    "out": "experiments/pair_detector"
+  },
+  "results": {
+    "test_01_known_vehicle_known_attack|A id-agnostic|5": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|B id-based|5": {
+      "detected": 7,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|A OR B|5": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|A id-agnostic|30": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 11.814899901542502,
+      "duty": 0.001359651179145764
+    },
+    "test_01_known_vehicle_known_attack|B id-based|30": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 21.941956960007502,
+      "duty": 0.0020629190304280558
+    },
+    "test_01_known_vehicle_known_attack|A OR B|30": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 23.629799803085003,
+      "duty": 0.002484879741197431
+    },
+    "test_06_masquerade|A id-agnostic|5": {
+      "detected": 4,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|B id-based|5": {
+      "detected": 8,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A OR B|5": {
+      "detected": 8,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A id-agnostic|30": {
+      "detected": 4,
+      "events": 8,
+      "fa_per_h": 10.15514809590973,
+      "duty": 0.0019746121297602257
+    },
+    "test_06_masquerade|B id-based|30": {
+      "detected": 8,
+      "events": 8,
+      "fa_per_h": 10.15514809590973,
+      "duty": 0.0005641748942172073
+    },
+    "test_06_masquerade|A OR B|30": {
+      "detected": 8,
+      "events": 8,
+      "fa_per_h": 20.31029619181946,
+      "duty": 0.002538787023977433
+    }
+  }
+}

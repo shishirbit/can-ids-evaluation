@@ -1,0 +1,123 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_02",
+    "warmup": 30.0,
+    "features": "both",
+    "epochs": 15,
+    "max_steps": 600,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 0,
+    "out": "experiments/id_agnostic"
+  },
+  "results": {
+    "test_01_known_vehicle_known_attack|known-clean|5": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 6.751371372310001,
+      "duty": 0.0003281916639317361,
+      "valid": true,
+      "threshold": 0.2582503855228424,
+      "median_latency_ms": 200.0
+    },
+    "test_01_known_vehicle_known_attack|known-clean|30": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 275.11838342163253,
+      "duty": 0.08804913498054293,
+      "valid": false,
+      "threshold": 0.0002913328353315592,
+      "median_latency_ms": 200.0
+    },
+    "test_01_known_vehicle_known_attack|target-own|5": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "valid": true,
+      "threshold": 0.9080331325531006,
+      "median_latency_ms": 200.0
+    },
+    "test_01_known_vehicle_known_attack|target-own|30": {
+      "detected": 11,
+      "events": 12,
+      "fa_per_h": 23.629799803085003,
+      "duty": 0.001781611889915139,
+      "valid": true,
+      "threshold": 0.12708410620689392,
+      "median_latency_ms": 200.0
+    },
+    "test_02_unknown_vehicle_known_attack|known-clean|5": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "valid": true,
+      "threshold": 0.2582503855228424,
+      "median_latency_ms": 200.0
+    },
+    "test_02_unknown_vehicle_known_attack|known-clean|30": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "valid": true,
+      "threshold": 0.0002913328353315592,
+      "median_latency_ms": 200.0
+    },
+    "test_02_unknown_vehicle_known_attack|target-own|5": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "valid": true,
+      "threshold": 0.0002579589490778744,
+      "median_latency_ms": 200.0
+    },
+    "test_02_unknown_vehicle_known_attack|target-own|30": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 22.92344700721664,
+      "duty": 0.002334795528512806,
+      "valid": true,
+      "threshold": 7.264274609042332e-05,
+      "median_latency_ms": 200.0
+    },
+    "test_06_masquerade|known-clean|5": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "valid": true,
+      "threshold": 0.2582503855228424,
+      "median_latency_ms": 300.00000000000006
+    },
+    "test_06_masquerade|known-clean|30": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 121.86177715091677,
+      "duty": 0.018899858956276445,
+      "valid": false,
+      "threshold": 0.0002913328353315592,
+      "median_latency_ms": 200.0
+    },
+    "test_06_masquerade|target-own|5": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0,
+      "valid": true,
+      "threshold": 0.011302744038403034,
+      "median_latency_ms": 300.00000000000006
+    },
+    "test_06_masquerade|target-own|30": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 10.15514809590973,
+      "duty": 0.000846262341325811,
+      "valid": true,
+      "threshold": 0.00247500604018569,
+      "median_latency_ms": 300.00000000000006
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_01",
+    "epochs": 15,
+    "max_steps": 600,
+    "batch": 512,
+    "lr": 0.001,
+    "seed": 1,
+    "out": "experiments/pair_detector"
+  },
+  "results": {
+    "test_01_known_vehicle_known_attack|A id-agnostic|5": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|B id-based|5": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 3.457548981943911,
+      "duty": 0.003937764118325009
+    },
+    "test_01_known_vehicle_known_attack|A OR B|5": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_01_known_vehicle_known_attack|A id-agnostic|30": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 24.202842873607377,
+      "duty": 0.0010564733000384171
+    },
+    "test_01_known_vehicle_known_attack|B id-based|30": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 27.66039185555129,
+      "duty": 0.005666538609296965
+    },
+    "test_01_known_vehicle_known_attack|A OR B|30": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 20.745293891663465,
+      "duty": 0.005090280445639647
+    },
+    "test_06_masquerade|A id-agnostic|5": {
+      "detected": 0,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|B id-based|5": {
+      "detected": 4,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A OR B|5": {
+      "detected": 4,
+      "events": 7,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A id-agnostic|30": {
+      "detected": 1,
+      "events": 7,
+      "fa_per_h": 8.266360505166475,
+      "duty": 0.0003444316877152698
+    },
+    "test_06_masquerade|B id-based|30": {
+      "detected": 5,
+      "events": 7,
+      "fa_per_h": 16.53272101033295,
+      "duty": 0.0006888633754305396
+    },
+    "test_06_masquerade|A OR B|30": {
+      "detected": 5,
+      "events": 7,
+      "fa_per_h": 16.53272101033295,
+      "duty": 0.0006888633754305396
+    }
+  }
+}

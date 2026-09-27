@@ -1,0 +1,579 @@
+{
+  "args": {
+    "data": "data/processed/fuzzy_only",
+    "synthetic": null,
+    "precursor": false,
+    "dt": 0.1,
+    "seq_len": 20,
+    "horizons": [
+      0,
+      1,
+      2,
+      5,
+      9
+    ],
+    "d_model": 128,
+    "no_graph": false,
+    "epochs": 30,
+    "batch": 64,
+    "lr": 0.0003,
+    "patience": 10,
+    "steps_per_epoch": 400,
+    "mc_passes": 20,
+    "seed": 0,
+    "out": "experiments/fuzzy"
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 0.24063608769327402,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 1,
+      "loss": 0.21382153917104005,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 2,
+      "loss": 0.2091455280408263,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 3,
+      "loss": 0.20629460092633964,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 4,
+      "loss": 0.20582376904785632,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 5,
+      "loss": 0.20479662630707027,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 6,
+      "loss": 0.2042117964848876,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 7,
+      "loss": 0.20463077042251826,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 8,
+      "loss": 0.20435725543648003,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 9,
+      "loss": 0.2033561886101961,
+      "val_f1": 0.0
+    },
+    {
+      "epoch": 10,
+      "loss": 0.20785870369523762,
+      "val_f1": 0.0
+    }
+  ],
+  "thresholds": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "results": {
+    "sttf": {
+      "0s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0013295301469042897,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0013295301469042897,
+          "threshold": 0.5
+        }
+      },
+      "1s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.4216926667485567,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.5783073332514433,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5037497878074646,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.4216926667485567,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.5783073332514433,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5037497878074646,
+          "threshold": 0.5
+        }
+      },
+      "2s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.42009581132539,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.57990418867461,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5410826802253723,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.42009581132539,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.57990418867461,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5410826802253723,
+          "threshold": 0.5
+        }
+      },
+      "5s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.41972730622773613,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.5802726937722639,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5267767310142517,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.41972730622773613,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.5802726937722639,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5267767310142517,
+          "threshold": 0.5
+        }
+      },
+      "9s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.41972730622773613,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.5802726937722639,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5345617532730103,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 0.41972730622773613,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.5802726937722639,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.5345617532730103,
+          "threshold": 0.5
+        }
+      }
+    },
+    "persistence": {
+      "0s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "1s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "2s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "5s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "9s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      }
+    },
+    "periodicity": {
+      "0s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "1s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "2s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "5s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      },
+      "9s": {
+        "all": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        },
+        "pre_onset": {
+          "n": 8141,
+          "pos_rate": 0.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "mcc": NaN,
+          "auc_roc": NaN,
+          "auc_pr": NaN,
+          "brier": 0.0,
+          "threshold": 0.5
+        }
+      }
+    }
+  },
+  "n_nodes": 32
+}

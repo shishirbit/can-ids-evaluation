@@ -1,0 +1,90 @@
+{
+  "args": {
+    "root": "data/raw/cantt/set_02",
+    "epochs": 15,
+    "max_steps": 600,
+    "batch": 512,
+    "lr": 0.001,
+    "branches": "rel+res",
+    "tests": [
+      "test_02_unknown_vehicle_known_attack",
+      "test_06_masquerade"
+    ],
+    "seed": 0,
+    "out": "experiments/pair_detector"
+  },
+  "results": {
+    "test_02_unknown_vehicle_known_attack|A id-agnostic|5": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 2.5470496674685155,
+      "duty": 0.00021225413895570964
+    },
+    "test_02_unknown_vehicle_known_attack|B id-based|5": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 2.5470496674685155,
+      "duty": 0.0002830055186076129
+    },
+    "test_02_unknown_vehicle_known_attack|A OR B|5": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_02_unknown_vehicle_known_attack|A id-agnostic|30": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 28.017546342153672,
+      "duty": 0.0016980331116456771
+    },
+    "test_02_unknown_vehicle_known_attack|B id-based|30": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 12.735248337342577,
+      "duty": 0.0024055469081647094
+    },
+    "test_02_unknown_vehicle_known_attack|A OR B|30": {
+      "detected": 12,
+      "events": 12,
+      "fa_per_h": 22.92344700721664,
+      "duty": 0.0030423093250318382
+    },
+    "test_06_masquerade|A id-agnostic|5": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|B id-based|5": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A OR B|5": {
+      "detected": 3,
+      "events": 8,
+      "fa_per_h": 0.0,
+      "duty": 0.0
+    },
+    "test_06_masquerade|A id-agnostic|30": {
+      "detected": 4,
+      "events": 8,
+      "fa_per_h": 10.15514809590973,
+      "duty": 0.000846262341325811
+    },
+    "test_06_masquerade|B id-based|30": {
+      "detected": 6,
+      "events": 8,
+      "fa_per_h": 20.31029619181946,
+      "duty": 0.002538787023977433
+    },
+    "test_06_masquerade|A OR B|30": {
+      "detected": 7,
+      "events": 8,
+      "fa_per_h": 20.31029619181946,
+      "duty": 0.002538787023977433
+    }
+  }
+}

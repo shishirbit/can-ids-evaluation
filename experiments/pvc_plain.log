@@ -1,0 +1,25 @@
+source files=14, target files=['DoS-3', 'DoS-4', 'force-neutral-3', 'force-neutral-4', 'rpm-3', 'rpm-4', 'standstill-3', 'standstill-4']
+0.0min|A->B|5            det=0/4 FA/h=   0.0 duty=  0.0% lat=None 
+0.0min|A->B|30           det=0/4 FA/h=   0.0 duty=  0.0% lat=None 
+0.0min|B->A|5            det=0/4 FA/h=   0.0 duty=  0.0% lat=None 
+0.0min|B->A|30           det=0/4 FA/h=   0.0 duty=  0.0% lat=None 
+1.0min|A->B|5            det=1/4 FA/h= 391.4 duty=  3.7% lat=400.0 [BUDGET VIOLATED]
+1.0min|A->B|30           det=1/4 FA/h= 391.4 duty=  3.7% lat=400.0 [BUDGET VIOLATED]
+1.0min|B->A|5            det=3/4 FA/h= 174.6 duty=  1.7% lat=300.00000000000006 [BUDGET VIOLATED]
+1.0min|B->A|30           det=3/4 FA/h= 174.6 duty=  1.7% lat=300.00000000000006 [BUDGET VIOLATED]
+5.0min|A->B|5            det=0/4 FA/h=  36.8 duty=  0.3% lat=None [BUDGET VIOLATED]
+5.0min|A->B|30           det=0/4 FA/h=  36.8 duty=  0.3% lat=None 
+5.0min|B->A|5            det=1/4 FA/h=  40.3 duty=  0.2% lat=124600.00000000001 [BUDGET VIOLATED]
+5.0min|B->A|30           det=1/4 FA/h=  40.3 duty=  0.2% lat=124600.00000000001 
+15.0min|A->B|5           det=0/4 FA/h=  64.5 duty=  0.5% lat=None [BUDGET VIOLATED]
+15.0min|A->B|30          det=0/4 FA/h=  64.5 duty=  0.5% lat=None 
+15.0min|B->A|5           det=3/4 FA/h= 248.5 duty=  2.3% lat=600.0000000000001 [BUDGET VIOLATED]
+15.0min|B->A|30          det=3/4 FA/h= 376.1 duty=  4.2% lat=300.00000000000006 [BUDGET VIOLATED]
+
+adapt minutes   @5/h events    duty  @30/h events    duty
+             0     0/8         0.0%      0/8         0.0%   valid-only: 0/8 @5/h, 0/8 @30/h
+             1     4/8         2.7%      4/8         2.7%   valid-only: 0/0 @5/h, 0/0 @30/h
+             5     1/8         0.3%      1/8         0.3%   valid-only: 0/0 @5/h, 1/8 @30/h
+            15     3/8         1.4%      3/8         2.3%   valid-only: 0/0 @5/h, 0/4 @30/h
+
+saved -> experiments\per_vehicle_calib\plain_s0.json

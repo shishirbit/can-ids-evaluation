@@ -1,0 +1,57 @@
+  train    ambient_dyno_drive_basic_long
+  test     ambient_dyno_drive_basic_short
+  train    ambient_dyno_drive_benign_anomaly
+  val      ambient_dyno_drive_extended_long
+  train    ambient_dyno_drive_extended_short
+  val      ambient_dyno_drive_radio_infotainment
+  val      ambient_dyno_drive_winter
+  test     ambient_dyno_idle_radio_infotainment
+  test     ambient_dyno_reverse
+  val      correlated_signal_attack_1
+  val      correlated_signal_attack_1_masquerade
+  train    correlated_signal_attack_2
+  train    correlated_signal_attack_2_masquerade
+  test     correlated_signal_attack_3
+  test     correlated_signal_attack_3_masquerade
+  val      fuzzing_attack_1
+  train    fuzzing_attack_2
+  test     fuzzing_attack_3
+  val      max_engine_coolant_temp_attack
+  val      max_engine_coolant_temp_attack_masquerade
+  val      max_speedometer_attack_1
+  val      max_speedometer_attack_1_masquerade
+  train    max_speedometer_attack_2
+  train    max_speedometer_attack_2_masquerade
+  test     max_speedometer_attack_3
+  test     max_speedometer_attack_3_masquerade
+  val      reverse_light_off_attack_1
+  val      reverse_light_off_attack_1_masquerade
+  train    reverse_light_off_attack_2
+  train    reverse_light_off_attack_2_masquerade
+  test     reverse_light_off_attack_3
+  test     reverse_light_off_attack_3_masquerade
+  val      reverse_light_on_attack_1
+  val      reverse_light_on_attack_1_masquerade
+  train    reverse_light_on_attack_2
+  train    reverse_light_on_attack_2_masquerade
+  test     reverse_light_on_attack_3
+  test     reverse_light_on_attack_3_masquerade
+{'train': 347237, 'val': 226747, 'test': 241499} n_ids=107
+ep 0 loss 0.0412 4s
+ep 1 loss 0.0002 4s
+ep 2 loss 0.0000 4s
+ep 3 loss 0.0000 4s
+ep 4 loss 0.0008 4s
+ep 5 loss 0.0006 4s
+ep 6 loss 0.0002 4s
+ep 7 loss 0.0002 4s
+ep 8 loss 0.0000 4s
+ep 9 loss 0.0000 4s
+ep 10 loss 0.0000 4s
+ep 11 loss 0.0000 4s
+ep 12 loss 0.0000 4s
+ep 13 loss 0.0000 4s
+ep 14 loss 0.0000 4s
+val: 14 sequences, 11 with attacks
+test: 12 sequences, 9 with attacks
+saved -> experiments\baseline_frames\convgru_payload_s3_fold2

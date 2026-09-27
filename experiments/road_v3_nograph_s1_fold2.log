@@ -1,0 +1,98 @@
+  train    ambient_dyno_drive_basic_long
+  test     ambient_dyno_drive_basic_short
+  train    ambient_dyno_drive_benign_anomaly
+  val      ambient_dyno_drive_extended_long
+  train    ambient_dyno_drive_extended_short
+  val      ambient_dyno_drive_radio_infotainment
+  val      ambient_dyno_drive_winter
+  test     ambient_dyno_idle_radio_infotainment
+  test     ambient_dyno_reverse
+  val      correlated_signal_attack_1
+  val      correlated_signal_attack_1_masquerade
+  train    correlated_signal_attack_2
+  train    correlated_signal_attack_2_masquerade
+  test     correlated_signal_attack_3
+  test     correlated_signal_attack_3_masquerade
+  val      fuzzing_attack_1
+  train    fuzzing_attack_2
+  test     fuzzing_attack_3
+  val      max_engine_coolant_temp_attack
+  val      max_engine_coolant_temp_attack_masquerade
+  val      max_speedometer_attack_1
+  val      max_speedometer_attack_1_masquerade
+  train    max_speedometer_attack_2
+  train    max_speedometer_attack_2_masquerade
+  test     max_speedometer_attack_3
+  test     max_speedometer_attack_3_masquerade
+  val      reverse_light_off_attack_1
+  val      reverse_light_off_attack_1_masquerade
+  train    reverse_light_off_attack_2
+  train    reverse_light_off_attack_2_masquerade
+  test     reverse_light_off_attack_3
+  test     reverse_light_off_attack_3_masquerade
+  val      reverse_light_on_attack_1
+  val      reverse_light_on_attack_1_masquerade
+  train    reverse_light_on_attack_2
+  train    reverse_light_on_attack_2_masquerade
+  test     reverse_light_on_attack_3
+  test     reverse_light_on_attack_3_masquerade
+nodes=107 windows=56742 in 38 sequences
+{'train': 24596, 'val': 15506, 'test': 15918}
+  train positive rate per horizon: [0.093 0.096 0.098 0.104]
+  val positive rate per horizon: [0.101 0.108 0.115 0.128]
+  test positive rate per horizon: [0.153 0.157 0.161 0.169]
+train positive rate per horizon: [0.093 0.096 0.099 0.107]
+params=1.05M
+ep   0 loss 0.8336 val_f1(mean over horizons) 0.5109 [0.502, 0.511, 0.516, 0.514] 32.8s
+ep   1 loss 0.6537 val_f1(mean over horizons) 0.7019 [0.679, 0.698, 0.699, 0.733] 31.8s
+ep   2 loss 0.6229 val_f1(mean over horizons) 0.4812 [0.477, 0.475, 0.475, 0.498] 31.6s
+ep   3 loss 0.6037 val_f1(mean over horizons) 0.6668 [0.699, 0.650, 0.660, 0.659] 35.9s
+ep   4 loss 0.6024 val_f1(mean over horizons) 0.6818 [0.699, 0.671, 0.675, 0.682] 36.3s
+ep   5 loss 0.5972 val_f1(mean over horizons) 0.7087 [0.751, 0.696, 0.696, 0.691] 32.8s
+ep   6 loss 0.5914 val_f1(mean over horizons) 0.7023 [0.775, 0.688, 0.669, 0.677] 31.5s
+ep   7 loss 0.5887 val_f1(mean over horizons) 0.6979 [0.737, 0.690, 0.689, 0.675] 31.6s
+ep   8 loss 0.5871 val_f1(mean over horizons) 0.7656 [0.816, 0.755, 0.757, 0.734] 31.4s
+ep   9 loss 0.5846 val_f1(mean over horizons) 0.7569 [0.814, 0.748, 0.738, 0.728] 31.5s
+ep  10 loss 0.6092 val_f1(mean over horizons) 0.6844 [0.719, 0.684, 0.684, 0.651] 31.8s
+ep  11 loss 0.6055 val_f1(mean over horizons) 0.6580 [0.716, 0.670, 0.648, 0.598] 31.9s
+ep  12 loss 0.5955 val_f1(mean over horizons) 0.6866 [0.744, 0.694, 0.680, 0.630] 33.0s
+ep  13 loss 0.5938 val_f1(mean over horizons) 0.7228 [0.777, 0.737, 0.708, 0.669] 36.1s
+ep  14 loss 0.5882 val_f1(mean over horizons) 0.7379 [0.787, 0.738, 0.724, 0.703] 36.2s
+early stop
+
+=== sttf (test) ===
+ horizon     subset   pos%       f1  auc_roc   auc_pr    brier      fpr      fnr      mcc
+      0s        all  15.35   0.9083   0.9897   0.9653   0.0504   0.0246   0.0553   0.8919
+      0s  pre_onset   0.00   0.0000      nan      nan   0.0528   0.0246   0.0000      nan
+      1s        all  15.84   0.8529   0.9733   0.9303   0.0666   0.0501   0.0587   0.8274
+      1s  pre_onset   0.65   0.0288   0.5002   0.0115   0.0730   0.0501   0.8736   0.0280
+      2s        all  16.35   0.8477   0.9608   0.8305   0.0726   0.0451   0.0944   0.8181
+      2s  pre_onset   1.26   0.0954   0.7133   0.0509   0.0805   0.0451   0.7725   0.0956
+      5s        all  17.51   0.8347   0.9673   0.8242   0.0756   0.0665   0.0592   0.8026
+      5s  pre_onset   2.68   0.3429   0.8840   0.2014   0.0849   0.0665   0.2931   0.3734
+
+=== persistence (test) ===
+ horizon     subset   pos%       f1  auc_roc   auc_pr    brier      fpr      fnr      mcc
+      0s        all  15.35   1.0000   1.0000   1.0000   0.0000   0.0000   0.0000   1.0000
+      0s  pre_onset   0.00   0.0000      nan      nan   0.0000   0.0000   0.0000      nan
+      1s        all  15.84   0.9823   0.9826   0.9707   0.0055   0.0000   0.0348   0.9793
+      1s  pre_onset   0.65   0.0000   0.5000   0.0065   0.0065   0.0000   1.0000   0.0000
+      2s        all  16.35   0.9663   0.9674   0.9455   0.0107   0.0000   0.0652   0.9608
+      2s  pre_onset   1.26   0.0000   0.5000   0.0126   0.0126   0.0000   1.0000   0.0000
+      5s        all  17.51   0.9307   0.9352   0.8930   0.0227   0.0000   0.1297   0.9203
+      5s  pre_onset   2.68   0.0000   0.5000   0.0268   0.0268   0.0000   1.0000   0.0000
+
+=== timing (test) ===
+ horizon     subset   pos%       f1  auc_roc   auc_pr    brier      fpr      fnr      mcc
+      0s        all  15.35   0.9405   0.9974   0.9872   0.0172   0.0003   0.1109   0.9325
+      0s  pre_onset   0.00   0.0000      nan      nan   0.0003   0.0003   0.0000      nan
+      1s        all  15.84   0.9243   0.9911   0.9647   0.0231   0.0003   0.1394   0.9147
+      1s  pre_onset   0.65   0.0000   0.9021   0.0440   0.0076   0.0003   1.0000  -0.0014
+      2s        all  16.35   0.9097   0.9865   0.9507   0.0283   0.0003   0.1643   0.8988
+      2s  pre_onset   1.26   0.0000   0.9054   0.0765   0.0143   0.0003   1.0000  -0.0020
+      5s        all  17.51   0.8714   0.9845   0.9432   0.0355   0.0039   0.2139   0.8546
+      5s  pre_onset   2.68   0.0681   0.9439   0.2267   0.0233   0.0039   0.9598   0.0845
+
+MC-dropout mean predictive variance: 0.00170
+detection latency (window-quantised, dt=0.1s): {'episodes': 9, 'detected': 8, 'missed': 1, 'latency_ms_median': 700.0000000000001, 'latency_ms_mean': 962.5000000000001, 'latency_ms_max': 3000.0}
+saved -> experiments\road_v3_nograph_s1_fold2\20260926-102742

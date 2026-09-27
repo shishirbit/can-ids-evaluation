@@ -1,0 +1,461 @@
+%% Computers & Security (Elsevier) submission
+%% Compile on Overleaf with pdfLaTeX: main.tex -> BibTeX -> pdfLaTeX x2
+\documentclass[preprint,11pt,authoryear]{elsarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{siunitx}
+\sisetup{detect-all, per-mode=symbol}
+
+\journal{Computers \& Security}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{What do CAN intrusion detection benchmarks measure?\\
+Evaluation traps, cross-vehicle failure, and a pair of\\ identifier-agnostic detectors}
+
+\author[a]{First Author}
+\ead{author@univ.edu}
+\author[a]{Second Author}
+\author[a]{Third Author}
+\affiliation[a]{organization={Department of Computer Science and Engineering, University XXXX},
+                city={City}, country={Country}}
+
+\begin{abstract}
+Machine-learning intrusion detection for the Controller Area Network (CAN) bus is routinely
+reported at above 99\% accuracy, yet almost nothing is known about how those detectors behave at a
+usable false-alarm rate or on a vehicle they were not trained on. We re-examine the question with
+an event-level evaluation protocol: capture-level cross-validation, whole held-out normal drives
+for calibration, $k$-of-$n$ alarm smoothing, an alarm duty-cycle cap, and detection reported at a
+stated false-alarm budget. Four findings follow. First, the most widely used benchmark encodes its
+own answer: in the HCRL Car-Hacking dataset every attack is separated by a gap of exactly
+\SI{3.0}{\second} (coefficient of variation 0.001--0.003), so a logistic model with a single
+feature -- time since the last attack -- reaches a pre-onset AUC of 1.000 where a spatio-temporal
+graph network reaches 0.851, and window-level detection is saturated (AUC 1.000). Second, on the
+ROAD dataset a 98\,k-parameter convolutional--recurrent network matches a
+1.05\,M-parameter graph model ($p=0.81$ over five seeds, identical detected-event sets) and
+both stop at the same 27-of-29 ceiling, so architectural complexity does not pay. Third, five
+evaluation choices -- threshold-grid resolution, seed count, an alarm duty cap during threshold
+selection and again on reported metrics, and whether held-out normal driving comes from different
+drives -- each individually reverse the apparent ranking of these models, so any one of them alone
+suffices to publish a spurious improvement. Fourth, on can-train-and-test these detectors do not
+transfer between vehicles at all (0 of 44 events across four vehicle pairs) and no amount of
+unlabelled target-vehicle traffic repairs it, whereas representations that describe each frame
+relative to its own arbitration identifier recover 69--78\% of those events with no labels from the
+target vehicle. Running two such identifier-agnostic detectors with OR-ed alarms detects 81\% of
+unknown-vehicle events at \SI{0.3}{\per\hour} false alarms using two 98\,k-parameter models
+(\SI{0.20}{\mega\byte} int8, $\approx$40\% of one CPU core). Code, splits and per-event results are
+released.
+\end{abstract}
+
+\begin{keyword}
+Controller Area Network \sep intrusion detection \sep evaluation methodology \sep
+cross-vehicle generalisation \sep automotive security \sep false-alarm budget
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+\label{sec:intro}
+
+The Controller Area Network (CAN) carries the safety-critical traffic of essentially every
+production vehicle and provides neither authentication nor encryption, so intrusion detection has
+become the pragmatic defence \citep{rajapaksha2022survey}. The literature reports detection
+accuracies above 99\% on public benchmarks with striking consistency
+\citep{song2020dcnn,lo2022hydlids,aljabri2025lightweight}. Two questions that decide whether such a
+detector could be deployed are, however, rarely asked: how many false alarms does it raise per hour
+of ordinary driving, and does it work on a vehicle other than the one it was trained on?
+
+This paper asks both. We keep the models deliberately ordinary -- a convolutional--recurrent
+network over raw frames, a graph-attention network over arbitration identifiers, gradient-boosted
+trees, and two unsupervised detectors -- and concentrate on the evaluation. Every result is reported
+at the event level: an alarm is a rising edge of a $k$-of-$n$ rule, a false alarm is such an edge on
+attack-free traffic, and detection is reported at a stated false-alarm budget with a cap on the
+fraction of time the alarm is active.
+
+Our contributions are:
+
+\begin{enumerate}
+\item \textbf{An event-level evaluation protocol for CAN IDS} (Section~\ref{sec:protocol}):
+capture-level cross-validation in which an attack and its masquerade variant never separate, whole
+held-out normal drives for threshold calibration, $k$-of-$n$ alarm smoothing, an alarm duty-cycle
+cap, and detection reported against a false-alarm budget rather than at a window-F1 optimum.
+
+\item \textbf{Evidence that the standard benchmark measures the injection schedule}
+(Section~\ref{sec:benchmarks}): Car-Hacking's attacks are separated by gaps of exactly
+\SI{3.0}{\second}, a single-feature timer beats a spatio-temporal graph network at every forecast
+horizon, and window-level detection is saturated. We also document two artefacts of the dataset
+that affect anyone using it.
+
+\item \textbf{Five evaluation traps} (Section~\ref{sec:traps}), each demonstrated on one codebase
+and each sufficient on its own to reverse the ranking of the models we compare.
+
+\item \textbf{A cross-vehicle failure and a fix} (Section~\ref{sec:transfer}): identifier-embedding
+detectors transfer to nothing (0/44 events on four vehicle pairs), unlabelled adaptation traffic
+does not help, identifier-agnostic representations recover most of the gap, and two such
+representations run as separate detectors with OR-ed alarms are complementary and cheap
+(Section~\ref{sec:cost}).
+\end{enumerate}
+
+\section{Background and related work}
+\label{sec:related}
+
+\paragraph{Datasets.} The HCRL Car-Hacking corpus \citep{song2020dcnn} is the most used CAN IDS
+benchmark. \citet{verma2024road} introduce ROAD, argue that public datasets contain attacks that are
+``too easily detectable'', and provide physically verified fabrication, fuzzing and masquerade
+attacks on one vehicle. \citet{lampe2023cantt} release can-train-and-test, whose four vehicles from
+two manufacturers support explicit known/unknown vehicle splits, and \citet{kidmose2025cansleuth}
+show that this dataset exposes vehicle overfitting that the HCRL corpora cannot.
+\citet{rajapaksha2024canmirgu} contribute real moving-vehicle attacks including masquerade and
+suspension.
+
+\paragraph{Detectors.} Deep detectors dominate: convolutional networks over identifier images
+\citep{song2020dcnn}, recurrence plots \citep{desta2022reccnn}, hybrid convolutional--recurrent
+stacks \citep{lo2022hydlids}, multimodal time-interval and signal models \citep{kang2024canival},
+and $n$-gram methods designed for microcontroller budgets \citep{stabili2022daga}. Uncertainty is
+commonly obtained through Monte-Carlo dropout \citep{gal2016dropout}.
+
+\paragraph{Evaluation.} Concerns about benchmark-driven results are established in network
+intrusion detection generally \citep{flood2024baddesign,goldschmidt2025datasets} and increasingly in
+the automotive case: \citet{sharmin2024benchmarking} propose an evaluation design space, and
+\citet{koltai2026cantrust} build a cross-dataset CAN IDS benchmark and find that reported
+performance depends strongly on dataset idiosyncrasies. Our protocol is complementary and more
+operational: it fixes an alarm rule and a false-alarm budget, which is what a vehicle integrator
+must specify.
+
+\paragraph{Transferable representations.} Closest to our Section~\ref{sec:transfer} are two recent
+works. \citet{khreasat2026relational} stress-test statistical, structural-transition and
+graph-topology features across attacks and platforms and report a hierarchy of what transfers,
+finding that payload-semantic attacks remain invisible to transition-based features.
+\citet{hegde2026residualization} propose per-identifier behavioural residualisation -- window
+statistics z-scored against each identifier's own baseline -- and argue that the representation
+rather than the detector drives performance. Neither evaluates cross-\emph{vehicle} transfer under a
+false-alarm budget. We re-implement the residualisation representation, show that it transfers
+across four vehicle pairs, and show that it is complementary to the per-frame relative
+representation we propose.
+
+\section{Data and preprocessing}
+\label{sec:data}
+
+\paragraph{Car-Hacking \citep{song2020dcnn}.} Four attack captures (DoS, fuzzy, gear and RPM
+spoofing) plus attack-free traffic. Parsing the raw logs exposes two artefacts. First, every attack
+file contains exactly 300 injection episodes whose inter-episode gaps are \SI{3.0}{\second} with a
+coefficient of variation of 0.001--0.003 (Fig.~\ref{fig:carhacking}a). Second, the same
+\SI{481.6}{\second} attack-free recording (891{,}068 byte-identical frames) is appended to all four
+attack files, and \texttt{Fuzzy\_dataset.csv} additionally contains two recording sessions separated
+by a \SI{2540}{\second} silence. We de-duplicate the appended recording and split logs at recording
+gaps; without this, a chronological split places every attack in the training portion.
+
+\paragraph{ROAD \citep{verma2024road}.} We use the nine dynamometer ambient captures
+(\SI{72}{\minute} of normal driving) and all attack captures with a labelled injection interval: 15
+physically verified injection events, 14 of which also have a masquerade variant, giving 29 attack
+events. Frame labels are reconstructed from the published metadata (interval, target identifier,
+byte pattern); as a check, in non-masquerade captures the target identifier carries exactly twice as
+many frames inside the interval as there are injected frames, and in the masquerade variants the two
+counts coincide. Sparse injections (the coolant attack sends 43 frames over \SI{4}{\second}) are
+closed into a single episode with a \SI{1}{\second} gap-filling rule so that one injection counts as
+one event.
+
+\paragraph{can-train-and-test \citep{lampe2023cantt}.} We use the four \texttt{set\_01}--\texttt{set\_04}
+sub-datasets, each defining a known and an unknown vehicle (Impala$\rightarrow$Silverado,
+Traverse$\rightarrow$Forester, Silverado$\rightarrow$Forester, Forester$\rightarrow$Traverse; three of
+the four pairs cross manufacturers), with per-frame attack labels.
+
+\section{Evaluation protocol}
+\label{sec:protocol}
+
+Traffic is aggregated into \SI{100}{\milli\second} windows. A detector produces one score per
+window; the alarm rule fires when at least $k$ of the last $n$ windows exceed a threshold. A
+\emph{false alarm} is a rising edge of that rule on attack-free traffic, expressed per hour; an
+attack \emph{event} is detected if the rule fires inside its episode, and latency is measured from
+episode onset. Four further rules make the numbers comparable:
+
+\begin{enumerate}
+\item \textbf{Capture-level cross-validation.} On ROAD, fold $f$ tests attack instance $f{+}1$,
+validates on the next and trains on the rest; an attack and its masquerade variant always share a
+split, because they are the same physical event.
+\item \textbf{Whole held-out normal drives.} Calibration and test normal traffic come from
+different recordings, never from time slices of the same drive.
+\item \textbf{Alarm duty-cycle cap.} The fraction of attack-free time in alarm must not exceed 2\%,
+both when selecting the threshold and in the reported result.
+\item \textbf{Report against a budget.} We report events detected at $\leq$5, 10, 30 and
+\SI{60}{\per\hour} false alarms, sweeping the threshold, rather than at the window-F1 optimum.
+\end{enumerate}
+
+Sanity baselines must be beaten before any claim is made: \emph{persistence} (the current window's
+own label), a \emph{timing} model using only time since the last attack and time since the recording
+started, per-identifier \emph{rate exceedance}, per-(identifier, byte) \emph{payload novelty}, and a
+gradient-boosted tree over all identifiers' window features.
+
+\section{What the standard benchmarks measure}
+\label{sec:benchmarks}
+
+\subsection{Car-Hacking rewards learning the schedule}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/carhacking_schedule.pdf}
+\caption{Car-Hacking. (a) Every attack file contains 300 episodes separated by gaps of exactly
+\SI{3.0}{\second}. (b) On pre-onset windows, a logistic model whose only feature is the time since
+the last attack outperforms a spatio-temporal graph network at every forecast horizon.}
+\label{fig:carhacking}
+\end{figure}
+
+Because the schedule is fixed, ``forecasting'' an attack reduces to counting seconds. On the fuzzy
+capture, evaluated only on windows in which no attack is yet in progress, a one-feature timer
+reaches AUC 1.000, 0.996 and 0.988 at horizons of 1, 2 and \SI{5}{\second}, against 0.851, 0.877 and
+0.847 for a graph-attention network with Monte-Carlo dropout (Fig.~\ref{fig:carhacking}b). Pooling
+all four attack files the timer still leads at \SI{1}{\second} (0.980 versus 0.901). Window-level
+detection on the same data is saturated: F1 0.9997 at AUC 1.000, matching published results and
+leaving no headroom to demonstrate a contribution.
+
+\subsection{On ROAD, model complexity does not pay}
+
+\begin{table}[t]
+\centering
+\caption{ROAD, 3-fold capture-level cross-validation, 29 attack events, \SI{1.2}{\hour} of held-out
+normal driving, 3-of-5 alarm rule, five seeds. Events detected (mean $\pm$ s.d.).}
+\label{tab:road}
+\begin{tabular}{lrrr}
+\toprule
+Model & Params & $\leq$\SI{5}{\per\hour} & $\leq$\SI{30}{\per\hour}\\
+\midrule
+Rate exceedance (unsup.)              & --               & 3/29 & 3/29\\
+Payload novelty (unsup.)              & --               & 0/29 & 0/29\\
+Window GBDT (no graph, no history)    & --               & 20/29 & 20/29\\
+Graph attention + payload novelty     & 1.05\,M & $22.4\pm7.8$ & $26.8\pm0.4$\\
+ConvGRU on raw frames                 & 98\,k   & $\mathbf{26.2\pm1.2}$ & $\mathbf{27.0\pm0.0}$\\
+ConvGRU + payload novelty             & 98\,k   & $26.2\pm1.0$ & $\mathbf{27.0\pm0.0}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:road} reports the comparison. The three learned models are statistically
+indistinguishable: ConvGRU versus ConvGRU with payload novelty gives $p=1.000$ with identical
+detected-event sets (McNemar), and either against the graph model gives $p=0.81$ at
+\SI{5}{\per\hour} and $p=0.42$ at \SI{30}{\per\hour} (Mann--Whitney over seeds). All stop at the same
+ceiling of 27 of 29 events; the two events that no model detects are the engine-coolant-temperature
+injection and its masquerade variant, the sparsest attack in the corpus. The
+98\,k-parameter model is $10\times$ smaller, $29\times$ faster per inference
+(Section~\ref{sec:cost}) and markedly more stable across seeds. Fig.~\ref{fig:curves} shows the full
+trade-off.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figs/road_event_curves.pdf}
+\caption{ROAD: attack events detected against false alarms per hour of held-out normal driving
+(3-of-5 alarm rule, alarm duty $\leq$2\%, folds pooled). Unsupervised detectors are unusable at any
+budget; the learned models converge to the same ceiling.}
+\label{fig:curves}
+\end{figure}
+
+\subsection{A detectability hierarchy}
+
+Attacks fall into three tiers, and the tier -- not the model -- decides what evidence is required.
+\emph{Rate} attacks change an identifier's frame rate. \emph{Value} attacks write byte values that
+identifier never normally carries; a per-(identifier, byte) novelty detector finds 17 of 17 of them.
+\emph{Contextual} attacks write a perfectly ordinary value that is wrong only in the light of other
+identifiers -- ROAD's reverse-light attacks set the light state while the vehicle is not in reverse
+-- and the same novelty detector finds 0 of 12. Cross-identifier evidence is therefore necessary for
+the third tier, but it need not be a graph neural network: a gradient-boosted tree over all
+identifiers' features in the current window finds 12 of 12.
+
+\section{Five evaluation traps}
+\label{sec:traps}
+
+Each of the following, applied alone to the same code and data, reverses the ranking of the models
+in Table~\ref{tab:road}.
+
+\begin{enumerate}
+\item \textbf{Threshold-grid resolution.} Searching 60 candidate thresholds made payload-novelty
+features appear to add $+4.2$ events ($p=0.029$); with 200 candidates the same comparison gives
+$p=1.000$ and identical event sets.
+\item \textbf{Seed count.} With three seeds the graph model appeared to add 11 events over its
+ablation; with five seeds the difference is $p=0.81$. Single-seed results at strict budgets are
+uninterpretable here: the same configuration scored 7, 27, 24, 27 and 25 events across seeds.
+\item \textbf{Duty cap during threshold selection.} A threshold low enough that the alarm never
+clears produces exactly one rising edge per recording. Without the cap this scores as ``29/29
+events at \SI{29}{\per\hour}'' -- a detector that is always firing.
+\item \textbf{Duty cap on reported metrics.} The same trap reappears at reporting time: on an unseen
+vehicle our detector reports 8/8 events at \SI{21.9}{\per\hour} while its alarm is active 99.9\% of
+the time (Section~\ref{sec:transfer}).
+\item \textbf{Composition of held-out normal traffic.} Calibrating on time slices of the same drives
+used for testing made thresholds appear to transfer; a budget of \SI{60}{\per\hour} set that way
+produced 1244--\SI{2866}{\per\hour} on unseen drives. Holding out whole drives brings the same budget
+to \SI{29}{\per\hour}.
+\end{enumerate}
+
+A further trap concerns latency. The alarm rule, not the model, sets the floor: a $k$-of-$n$ rule
+cannot fire before $k$ windows. Reporting a raw single-window threshold gives a median latency of
+\SI{0}{\milli\second} (detection inside the onset window), but the stable 3-of-5 configuration costs
+\SI{220}{\milli\second}; the unsmoothed alarm that meets a sub-\SI{100}{\milli\second} target has no
+feasible threshold for two of five seeds (Table~\ref{tab:latency}).
+
+\begin{table}[t]
+\centering
+\caption{Latency is set by the alarm rule. ConvGRU with payload novelty at $\leq$\SI{5}{\per\hour},
+five seeds, ROAD.}
+\label{tab:latency}
+\begin{tabular}{lrrl}
+\toprule
+Rule & Events detected & Median latency & Note\\
+\midrule
+1-of-1 & $16.2\pm13.2$ & \SI{0}{\milli\second} & no feasible threshold for 2/5 seeds\\
+2-of-3 & $21.2\pm10.6$ & \SI{112}{\milli\second} & 1/5 seeds infeasible\\
+3-of-5 & $\mathbf{26.2\pm1.0}$ & \SI{220}{\milli\second} & stable\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Cross-vehicle transfer}
+\label{sec:transfer}
+
+\subsection{Identifier-embedding detectors transfer to nothing}
+
+Trained on one vehicle of a can-train-and-test pair and evaluated on the other, the detector detects
+0 of 44 events across the four pairs at any valid operating point (Fig.~\ref{fig:cross}). The raw
+numbers look deceptively good -- with the source vehicle's threshold it flags 8/8 events on the
+target -- but its alarm is active 99.9\% of the time, and once the threshold must satisfy a
+false-alarm budget on the target vehicle's own attack-free traffic, detection falls to zero. Removing
+the payload features changes nothing, so this is not a feature artefact: the learned identifier
+embeddings and traffic patterns are vehicle-specific, and the target vehicle has 98 arbitration
+identifiers against the source's 52.
+
+Supplying unlabelled traffic from the target vehicle does not repair it. Adding its identifiers to
+the vocabulary and 1, 5 or \SI{15}{\minute} of its attack-free frames as negatives, with the
+threshold calibrated on a held-out fifth of that traffic, yields 0--1 of 8 events at a valid
+operating point with no trend in the amount of traffic. The mechanism is visible: those identifiers'
+embeddings are trained exclusively on normal traffic, so the classifier has never seen an attack on
+any of them.
+
+\subsection{Identifier-agnostic representations transfer}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figs/cross_vehicle.pdf}
+\caption{Unknown-vehicle detection at $\leq$\SI{5}{\per\hour} false alarms, thresholds calibrated on
+the target vehicle's own attack-free traffic (no target labels), three seeds. Identifier-embedding
+detectors score zero on every pair.}
+\label{fig:cross}
+\end{figure}
+
+We describe each frame only \emph{relative to its own arbitration identifier}: cadence ratio against
+that identifier's warm-up median inter-arrival time, payload bit- and byte-change rates, excursion
+beyond that identifier's warm-up byte range, per-identifier and bus-wide rate ratios, and DLC change
+-- twelve features, no identifier embedding and no cross-vehicle vocabulary. Per-identifier
+references come from a \SI{30}{\second} warm-up prefix of each capture, so adapting to a new vehicle
+requires neither labels nor retraining. We compare against our re-implementation of per-identifier
+behavioural residualisation \citep{hegde2026residualization}, which z-scores 14 window statistics
+against each identifier's baseline.
+
+Both transfer. Pooled over the four pairs and three seeds, the relative representation detects
+34.3/44 unknown-vehicle events (78\%) and residualisation 30.3/44 (69\%), against 0/44 for the
+identifier-embedding detector. The finding is therefore a property of identifier-agnostic
+representations in general, not of one feature set. They differ in their blind spots: on masquerade
+attacks residualisation reaches 40\% against 18\% for the relative features.
+
+Concatenating the two feature sets into a single 26-feature input \emph{fails}: unknown-vehicle
+detection drops to 53\% at \SI{5}{\per\hour} and 60\% at \SI{30}{\per\hour}. On one pair the combined
+model collapses to 0/10 because its scores on the target vehicle's clean traffic saturate near 1.0,
+so no threshold meets the budget -- with the source vehicle's threshold it still finds 10/10, i.e.
+discrimination survives while calibration fails.
+
+\subsection{Two detectors, OR-ed alarms}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figs/pair_union.pdf}
+\caption{Two identifier-agnostic detectors with OR-ed alarms, each given half the false-alarm
+budget, on the unknown vehicle and on masquerade attacks (four pairs $\times$ two seeds).}
+\label{fig:pair}
+\end{figure}
+
+Because the blind spots are disjoint, we run both representations as separate detectors and raise an
+alarm when either fires, giving each half the budget. Pooled over four pairs and two seeds
+(Fig.~\ref{fig:pair}), the union detects 71 of 88 unknown-vehicle events (81\%) at
+\SI{0.3}{\per\hour} false alarms, against 67\% and 69\% for the branches alone at 1.2--1.3, and 83\%
+at a \SI{30}{\per\hour} budget. On masquerade attacks the union reaches 38\% at \SI{5}{\per\hour} and
+52\% at \SI{30}{\per\hour}, roughly doubling the relative representation alone. The union therefore
+improves detection \emph{and} lowers the false-alarm rate, because each branch runs at a stricter
+threshold. Masquerade coverage of 38--52\% remains the principal open problem, consistent with the
+contextual tier being the hardest case throughout this study.
+
+\section{Deployment cost}
+\label{sec:cost}
+
+Table~\ref{tab:cost} reports batch-1 inference on a single CPU thread. The
+98\,k-parameter detector needs \SI{0.10}{\mega\byte} in int8 and about 20\% of one core at
+the rate its sliding window implies; the paired design doubles that. Feature extraction costs 0.3\%
+of a core over real traffic. By contrast, the 50-pass Monte-Carlo-dropout uncertainty specified in
+much of the forecasting literature \citep{gal2016dropout} would require roughly 20 cores at the same
+window rate, which rules it out for an embedded deployment. A laptop core is several times faster
+than a typical automotive core, so these are optimistic bounds; the duty column is what scales.
+
+\begin{table}[t]
+\centering
+\caption{Inference cost, one CPU thread, batch 1.}
+\label{tab:cost}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Params & int8 & Median & p99 & Duty on one core\\
+\midrule
+ConvGRU + payload novelty & 98\,k & \SI{0.10}{\mega\byte} & \SI{1.35}{\milli\second} & \SI{1.69}{\milli\second} & 20\%\\
+Graph attention           & 1.05\,M & \SI{1.05}{\mega\byte} & \SI{38.9}{\milli\second} & \SI{70.1}{\milli\second} & 39\%\\
+Graph attention, 50 MC passes & 1.05\,M & \SI{1.05}{\mega\byte} & \SI{1945}{\milli\second} & -- & 1945\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Limitations}
+\label{sec:limits}
+
+ROAD provides 15 injection events on one vehicle, and can-train-and-test four vehicles from two
+manufacturers; our error bars are over seeds, not over vehicles or fleets. Latency is quantised to
+the \SI{100}{\milli\second} window. The identifier-agnostic pipeline excludes windows inside its
+\SI{30}{\second} warm-up, so attacks beginning in the first \SI{30}{\second} of a capture are not
+evaluated and event denominators differ slightly between representations. Suppress attacks, in which
+frames are removed rather than injected, are not covered. Finally, both our relative representation
+and our residualisation baseline are re-implementations evaluated under one protocol; the original
+authors' code may behave differently.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The question that decides deployability of a CAN intrusion detector is not benchmark accuracy but
+how many events it catches per hour of false alarms, and whether it survives a change of vehicle. On
+the standard benchmark, a one-feature timer matches a graph network because the benchmark's attacks
+run on a timetable; on a realistic corpus, a 98\,k-parameter model matches a
+1.05\,M-parameter one and both stop at the same data-imposed ceiling; and across vehicles,
+identifier-embedding detectors detect nothing at a usable false-alarm rate. What does transfer is a
+representation that never names an identifier, and two such representations, run as separate
+detectors with OR-ed alarms and calibrated on a new vehicle's own unlabelled traffic, detect 81\% of
+that vehicle's attack events at \SI{0.3}{\per\hour} false alarms for \SI{0.20}{\mega\byte} of
+parameters. We suggest that future CAN IDS results be reported at a stated false-alarm budget, with
+an alarm duty cap, on held-out drives, and -- wherever the data permit -- on a vehicle the detector
+has never seen.
+
+\section*{Data availability}
+All datasets used are public: Car-Hacking and ROAD are available from their authors, and
+can-train-and-test from its repository. Our code, data-preparation scripts, splits and per-event
+results will be released at \url{https://github.com/ANONYMISED} upon acceptance.
+
+\section*{Declaration of competing interest}
+The authors declare that they have no known competing financial interests or personal relationships
+that could have appeared to influence the work reported in this paper.
+
+\section*{CRediT authorship contribution statement}
+\textbf{First Author}: Conceptualization, Methodology, Software, Investigation, Writing -- original
+draft. \textbf{Second Author}: Validation, Writing -- review \& editing.
+\textbf{Third Author}: Supervision, Writing -- review \& editing.
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,179 @@
+
+##### fold 0
+  test     ambient_dyno_drive_basic_long
+  val      ambient_dyno_drive_basic_short
+  test     ambient_dyno_drive_benign_anomaly
+  train    ambient_dyno_drive_extended_long
+  test     ambient_dyno_drive_extended_short
+  train    ambient_dyno_drive_radio_infotainment
+  train    ambient_dyno_drive_winter
+  val      ambient_dyno_idle_radio_infotainment
+  val      ambient_dyno_reverse
+  test     correlated_signal_attack_1
+  test     correlated_signal_attack_1_masquerade
+  val      correlated_signal_attack_2
+  val      correlated_signal_attack_2_masquerade
+  train    correlated_signal_attack_3
+  train    correlated_signal_attack_3_masquerade
+  test     fuzzing_attack_1
+  val      fuzzing_attack_2
+  train    fuzzing_attack_3
+  test     max_engine_coolant_temp_attack
+  test     max_engine_coolant_temp_attack_masquerade
+  test     max_speedometer_attack_1
+  test     max_speedometer_attack_1_masquerade
+  val      max_speedometer_attack_2
+  val      max_speedometer_attack_2_masquerade
+  train    max_speedometer_attack_3
+  train    max_speedometer_attack_3_masquerade
+  test     reverse_light_off_attack_1
+  test     reverse_light_off_attack_1_masquerade
+  val      reverse_light_off_attack_2
+  val      reverse_light_off_attack_2_masquerade
+  train    reverse_light_off_attack_3
+  train    reverse_light_off_attack_3_masquerade
+  test     reverse_light_on_attack_1
+  test     reverse_light_on_attack_1_masquerade
+  val      reverse_light_on_attack_2
+  val      reverse_light_on_attack_2_masquerade
+  train    reverse_light_on_attack_3
+  train    reverse_light_on_attack_3_masquerade
+train 15309 val 15493 test 25218 windows; features (107, 32)
+  rate         test AUC 0.7733  F1 0.5883  FPR 0.0270
+  surprise     test AUC 0.2139  F1 0.0969  FPR 0.7395
+  window_gbdt  test AUC 0.9176  F1 0.5794  FPR 0.0824
+
+##### fold 1
+  val      ambient_dyno_drive_basic_long
+  train    ambient_dyno_drive_basic_short
+  val      ambient_dyno_drive_benign_anomaly
+  test     ambient_dyno_drive_extended_long
+  val      ambient_dyno_drive_extended_short
+  test     ambient_dyno_drive_radio_infotainment
+  test     ambient_dyno_drive_winter
+  train    ambient_dyno_idle_radio_infotainment
+  train    ambient_dyno_reverse
+  train    correlated_signal_attack_1
+  train    correlated_signal_attack_1_masquerade
+  test     correlated_signal_attack_2
+  test     correlated_signal_attack_2_masquerade
+  val      correlated_signal_attack_3
+  val      correlated_signal_attack_3_masquerade
+  train    fuzzing_attack_1
+  test     fuzzing_attack_2
+  val      fuzzing_attack_3
+  train    max_engine_coolant_temp_attack
+  train    max_engine_coolant_temp_attack_masquerade
+  train    max_speedometer_attack_1
+  train    max_speedometer_attack_1_masquerade
+  test     max_speedometer_attack_2
+  test     max_speedometer_attack_2_masquerade
+  val      max_speedometer_attack_3
+  val      max_speedometer_attack_3_masquerade
+  train    reverse_light_off_attack_1
+  train    reverse_light_off_attack_1_masquerade
+  test     reverse_light_off_attack_2
+  test     reverse_light_off_attack_2_masquerade
+  val      reverse_light_off_attack_3
+  val      reverse_light_off_attack_3_masquerade
+  train    reverse_light_on_attack_1
+  train    reverse_light_on_attack_1_masquerade
+  test     reverse_light_on_attack_2
+  test     reverse_light_on_attack_2_masquerade
+  val      reverse_light_on_attack_3
+  val      reverse_light_on_attack_3_masquerade
+train 16115 val 25021 test 14884 windows; features (107, 32)
+  rate         test AUC 0.7239  F1 0.5974  FPR 0.0338
+  surprise     test AUC 0.3214  F1 0.2670  FPR 1.0000
+  window_gbdt  test AUC 0.9630  F1 0.8284  FPR 0.0497
+
+##### fold 2
+  train    ambient_dyno_drive_basic_long
+  test     ambient_dyno_drive_basic_short
+  train    ambient_dyno_drive_benign_anomaly
+  val      ambient_dyno_drive_extended_long
+  train    ambient_dyno_drive_extended_short
+  val      ambient_dyno_drive_radio_infotainment
+  val      ambient_dyno_drive_winter
+  test     ambient_dyno_idle_radio_infotainment
+  test     ambient_dyno_reverse
+  val      correlated_signal_attack_1
+  val      correlated_signal_attack_1_masquerade
+  train    correlated_signal_attack_2
+  train    correlated_signal_attack_2_masquerade
+  test     correlated_signal_attack_3
+  test     correlated_signal_attack_3_masquerade
+  val      fuzzing_attack_1
+  train    fuzzing_attack_2
+  test     fuzzing_attack_3
+  val      max_engine_coolant_temp_attack
+  val      max_engine_coolant_temp_attack_masquerade
+  val      max_speedometer_attack_1
+  val      max_speedometer_attack_1_masquerade
+  train    max_speedometer_attack_2
+  train    max_speedometer_attack_2_masquerade
+  test     max_speedometer_attack_3
+  test     max_speedometer_attack_3_masquerade
+  val      reverse_light_off_attack_1
+  val      reverse_light_off_attack_1_masquerade
+  train    reverse_light_off_attack_2
+  train    reverse_light_off_attack_2_masquerade
+  test     reverse_light_off_attack_3
+  test     reverse_light_off_attack_3_masquerade
+  val      reverse_light_on_attack_1
+  val      reverse_light_on_attack_1_masquerade
+  train    reverse_light_on_attack_2
+  train    reverse_light_on_attack_2_masquerade
+  test     reverse_light_on_attack_3
+  test     reverse_light_on_attack_3_masquerade
+train 24596 val 15506 test 15918 windows; features (107, 32)
+  rate         test AUC 0.7456  F1 0.6034  FPR 0.0449
+  surprise     test AUC 0.5981  F1 0.4574  FPR 0.2785
+  window_gbdt  test AUC 0.9845  F1 0.8496  FPR 0.0525
+
+=== rate (pooled 3 folds) AUC 0.7480 AUC-PR 0.3840 F1 0.5972 FPR 0.0336 | false alarms 1249.7/h
+   correlated_signal_attack         detected 5/6  median latency 100 ms
+   fuzzing_attack                   detected 3/3  median latency 0 ms
+   max_engine_coolant_temp_attack   detected 2/2  median latency 0 ms
+   max_speedometer_attack           detected 5/6  median latency 0 ms
+   reverse_light_off_attack         detected 4/6  median latency 50 ms
+   reverse_light_on_attack          detected 5/6  median latency 100 ms
+
+=== surprise (pooled 3 folds) AUC 0.3418 AUC-PR 0.0886 F1 0.2255 FPR 0.6805 | false alarms 26597.6/h
+   correlated_signal_attack         detected 6/6  median latency 0 ms
+   fuzzing_attack                   detected 3/3  median latency 0 ms
+   max_engine_coolant_temp_attack   detected 2/2  median latency 0 ms
+   max_speedometer_attack           detected 6/6  median latency 0 ms
+   reverse_light_off_attack         detected 4/6  median latency 550 ms
+   reverse_light_on_attack          detected 4/6  median latency 3750 ms
+
+=== window_gbdt (pooled 3 folds) AUC 0.9629 AUC-PR 0.7707 F1 0.7560 FPR 0.0661 | false alarms 418.3/h
+   correlated_signal_attack         detected 6/6  median latency 0 ms
+   fuzzing_attack                   detected 3/3  median latency 0 ms
+   max_engine_coolant_temp_attack   detected 0/2  median latency nan ms
+   max_speedometer_attack           detected 6/6  median latency 0 ms
+   reverse_light_off_attack         detected 6/6  median latency 0 ms
+   reverse_light_on_attack          detected 6/6  median latency 0 ms
+
+=== operating points (threshold set on validation for a false-alarm budget) ===
+detector     rule    budget/h test FA/h   value value-masq context ctx-masq median ms
+rate         1-of-1        60      29.1   10/10        7/7     6/6      6/6         0
+rate         1-of-1        10       0.0    3/10        0/7     0/6      0/6         0
+rate         2-of-3        60      29.1   10/10        7/7     6/6      6/6         0
+rate         2-of-3        10       5.4    3/10        0/7     0/6      0/6       100
+rate         3-of-5        60      29.1   10/10        7/7     6/6      6/6         0
+rate         3-of-5        10       3.1    3/10        0/7     0/6      0/6       200
+surprise     1-of-1        60      29.1   10/10        7/7     6/6      6/6         0
+surprise     1-of-1        10     254.2    4/10        1/7     0/6      0/6         0
+surprise     2-of-3        60      29.1   10/10        7/7     6/6      6/6         0
+surprise     2-of-3        10      92.7    4/10        1/7     0/6      0/6       100
+surprise     3-of-5        60      29.1   10/10        7/7     6/6      6/6         0
+surprise     3-of-5        10      19.9    2/10        0/7     0/6      0/6       400
+window_gbdt  1-of-1        60      30.6   10/10        7/7     6/6      6/6         0
+window_gbdt  1-of-1        10      25.3    5/10        4/7     4/6      3/6         0
+window_gbdt  2-of-3        60      29.1   10/10        7/7     6/6      6/6         0
+window_gbdt  2-of-3        10      19.9    5/10        4/7     4/6      4/6       100
+window_gbdt  3-of-5        60      29.1   10/10        7/7     6/6      6/6         0
+window_gbdt  3-of-5        10      17.6    6/10        4/7     4/6      4/6       200
+
+saved -> experiments\road_detectors_v3\summary.json

@@ -1,0 +1,14 @@
+{
+  "model": "convgru",
+  "road": "data/processed/road",
+  "fold": 0,
+  "payload": false,
+  "frames": 64,
+  "stride": 16,
+  "epochs": 15,
+  "batch": 512,
+  "lr": 0.001,
+  "max_steps": 600,
+  "seed": 3,
+  "out": "experiments/baseline_frames"
+}

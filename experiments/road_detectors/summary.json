@@ -1,0 +1,4766 @@
+{
+  "rate": {
+    "auc_roc": 0.7526477668440285,
+    "auc_pr": 0.5283515687123862,
+    "f1": 0.6604841858648964,
+    "fpr": 0.022552144269173357,
+    "false_alarms_per_hour": 771.4995857497928,
+    "captures": [
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 15
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 3
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 8
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 7
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 94
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 100.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 9400.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_engine_coolant_temp_attack",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 3
+      },
+      {
+        "name": "max_engine_coolant_temp_attack_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 3
+      },
+      {
+        "name": "max_speedometer_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 2
+      },
+      {
+        "name": "max_speedometer_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 300.00000000000006,
+        "false_alarm_windows_before_onset": 2
+      },
+      {
+        "name": "reverse_light_off_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_off_attack_1_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 300.00000000000006,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 15
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 8
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 6
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 94
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 2600.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "max_speedometer_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_2_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 100.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_2_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 6100.000000000001,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 15
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 3
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 8
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 7
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 94
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_3_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "max_speedometer_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 58600.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_off_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 4500.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 100.0,
+        "false_alarm_windows_before_onset": 28
+      },
+      {
+        "name": "reverse_light_on_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 200.0,
+        "false_alarm_windows_before_onset": 28
+      }
+    ],
+    "operating": [
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 41.588829040527344,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 41.588829040527344,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 41.588829040527344,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 41.588829040527344,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 41.588829040527344,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 41.588829040527344,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 54.16100311279297,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 54.16100311279297,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 54.16100311279297,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 54.16100311279297,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 54.16100311279297,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 300.00000000000006,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 54.16100311279297,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 300.00000000000006,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 1.0,
+          "test_false_alarms_per_h": 5.15907136715391,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 1.0,
+          "test_false_alarms_per_h": 5.15907136715391,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 1.0,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 1.0,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 1.0,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 1.0,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "surprise": {
+    "auc_roc": 0.6805796685763339,
+    "auc_pr": 0.31716968802803763,
+    "f1": 0.5349498578057177,
+    "fpr": 0.14063823778593618,
+    "false_alarms_per_hour": 6269.428334714167,
+    "captures": [
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 8
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 552
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 343
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 367
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_engine_coolant_temp_attack",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 54
+      },
+      {
+        "name": "max_engine_coolant_temp_attack_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 54
+      },
+      {
+        "name": "max_speedometer_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "max_speedometer_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_off_attack_1",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_off_attack_1_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_1",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 9
+      },
+      {
+        "name": "reverse_light_on_attack_1_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 9
+      },
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 8
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 552
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 24
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 348
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 3
+      },
+      {
+        "name": "max_speedometer_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_2",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_off_attack_2_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_2",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_2_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 1
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 552
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 34
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 357
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "correlated_signal_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "correlated_signal_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "fuzzing_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_3",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_off_attack_3_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_3",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      },
+      {
+        "name": "reverse_light_on_attack_3_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 1
+      }
+    ],
+    "operating": [
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 13.17420482635498,
+          "test_false_alarms_per_h": 346.4133966508373,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 14.339849472045898,
+          "test_false_alarms_per_h": 13.496625843539116,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 1.1120996475219727,
+          "test_false_alarms_per_h": 58.48537865533617,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 13.17420482635498,
+          "test_false_alarms_per_h": 13.496625843539116,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 0.6604117751121521,
+          "test_false_alarms_per_h": 58.48537865533617,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 3.8662667274475098,
+          "test_false_alarms_per_h": 22.494376405898528,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 13.184419631958008,
+          "test_false_alarms_per_h": 25.34140504012388,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 14.339849472045898,
+          "test_false_alarms_per_h": 15.20484302407433,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 1.0673551559448242,
+          "test_false_alarms_per_h": 50.68281008024776,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 13.184419631958008,
+          "test_false_alarms_per_h": 15.20484302407433,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 0.42489689588546753,
+          "test_false_alarms_per_h": 50.68281008024776,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 3.8730196952819824,
+          "test_false_alarms_per_h": 25.34140504012388,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 15.869772911071777,
+          "test_false_alarms_per_h": 15.47721410146173,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 300.00000000000006,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 15.869772911071777,
+          "test_false_alarms_per_h": 15.47721410146173,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 300.00000000000006,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 0.6627935171127319,
+          "test_false_alarms_per_h": 41.27257093723128,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": true,
+              "latency_ms": 18500.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 18500.0,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 13.155047416687012,
+          "test_false_alarms_per_h": 15.47721410146173,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 400.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 0.36506494879722595,
+          "test_false_alarms_per_h": 41.27257093723128,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": true,
+              "latency_ms": 18500.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 18500.0,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 1.5452145338058472,
+          "test_false_alarms_per_h": 36.11349957007737,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "window_gbdt": {
+    "auc_roc": 0.8824329206771236,
+    "auc_pr": 0.647678572676389,
+    "f1": 0.7536252589470677,
+    "fpr": 0.09771251059022874,
+    "false_alarms_per_hour": 159.07207953603975,
+    "captures": [
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 28
+      },
+      {
+        "name": "correlated_signal_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 16600.0,
+        "false_alarm_windows_before_onset": 5
+      },
+      {
+        "name": "correlated_signal_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 16600.0,
+        "false_alarm_windows_before_onset": 5
+      },
+      {
+        "name": "fuzzing_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 8
+      },
+      {
+        "name": "max_engine_coolant_temp_attack",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_engine_coolant_temp_attack_masquerade",
+        "attack": true,
+        "detected": false,
+        "latency_ms": NaN,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "max_speedometer_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 161
+      },
+      {
+        "name": "max_speedometer_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 161
+      },
+      {
+        "name": "reverse_light_off_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_off_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 0
+      },
+      {
+        "name": "reverse_light_on_attack_1",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 79
+      },
+      {
+        "name": "reverse_light_on_attack_1_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 79
+      },
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 22
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 2
+      },
+      {
+        "name": "correlated_signal_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 49
+      },
+      {
+        "name": "correlated_signal_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 49
+      },
+      {
+        "name": "fuzzing_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 39
+      },
+      {
+        "name": "max_speedometer_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 83
+      },
+      {
+        "name": "max_speedometer_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 83
+      },
+      {
+        "name": "reverse_light_off_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 9
+      },
+      {
+        "name": "reverse_light_off_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 9
+      },
+      {
+        "name": "reverse_light_on_attack_2",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 28
+      },
+      {
+        "name": "reverse_light_on_attack_2_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 28
+      },
+      {
+        "name": "ambient_dyno_drive_basic_long",
+        "attack": false,
+        "hours": 0.05075,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_basic_short",
+        "attack": false,
+        "hours": 0.017166666666666667,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_benign_anomaly",
+        "attack": false,
+        "hours": 0.017638888888888888,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_long",
+        "attack": false,
+        "hours": 0.026027777777777778,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_extended_short",
+        "attack": false,
+        "hours": 0.01361111111111111,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_radio_infotainment",
+        "attack": false,
+        "hours": 0.014888888888888889,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_drive_winter",
+        "attack": false,
+        "hours": 0.0006111111111111112,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_idle_radio_infotainment",
+        "attack": false,
+        "hours": 0.026166666666666668,
+        "false_alarm_windows": 0
+      },
+      {
+        "name": "ambient_dyno_reverse",
+        "attack": false,
+        "hours": 0.0007777777777777778,
+        "false_alarm_windows": 28
+      },
+      {
+        "name": "correlated_signal_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 24
+      },
+      {
+        "name": "correlated_signal_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 24
+      },
+      {
+        "name": "fuzzing_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 29
+      },
+      {
+        "name": "max_speedometer_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 76
+      },
+      {
+        "name": "max_speedometer_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 76
+      },
+      {
+        "name": "reverse_light_off_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 83
+      },
+      {
+        "name": "reverse_light_off_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 0.0,
+        "false_alarm_windows_before_onset": 83
+      },
+      {
+        "name": "reverse_light_on_attack_3",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 200.0,
+        "false_alarm_windows_before_onset": 64
+      },
+      {
+        "name": "reverse_light_on_attack_3_masquerade",
+        "attack": true,
+        "detected": true,
+        "latency_ms": 200.0,
+        "false_alarm_windows_before_onset": 64
+      }
+    ],
+    "operating": [
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 1.387694839061753e-07,
+          "test_false_alarms_per_h": 328.41789552611846,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 0.9993788037540952,
+          "test_false_alarms_per_h": 17.99550112471882,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 1.1250242731643409e-07,
+          "test_false_alarms_per_h": 112.47188202949263,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 0.999072255780945,
+          "test_false_alarms_per_h": 8.99775056235941,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 1.1250242731643409e-07,
+          "test_false_alarms_per_h": 98.97525618595351,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 0.9989078453677391,
+          "test_false_alarms_per_h": 8.99775056235941,
+          "test_clean_hours": 0.22227777777777777,
+          "events": [
+            {
+              "name": "correlated_signal_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_engine_coolant_temp_attack_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_1_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_1",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_1_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 0.003971695809958197,
+          "test_false_alarms_per_h": 126.70702520061941,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 0.9844344225549576,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": true,
+              "latency_ms": 500.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": true,
+              "latency_ms": 9100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 6.498343784488488e-06,
+          "test_false_alarms_per_h": 106.43390116852031,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 0.9844344225549576,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": true,
+              "latency_ms": 13400.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 4.220248612514825e-06,
+          "test_false_alarms_per_h": 101.36562016049552,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 0.9844344225549576,
+          "test_false_alarms_per_h": 0.0,
+          "test_clean_hours": 0.19730555555555562,
+          "events": [
+            {
+              "name": "correlated_signal_attack_2",
+              "detected": true,
+              "latency_ms": 3700.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "correlated_signal_attack_2_masquerade",
+              "detected": true,
+              "latency_ms": 3700.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "fuzzing_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "max_speedometer_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2",
+              "detected": true,
+              "latency_ms": 13500.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_2_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 60,
+          "threshold": 0.005846276596514817,
+          "test_false_alarms_per_h": 113.49957007738602,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": true,
+              "latency_ms": 5000.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 5000.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "1-of-1",
+          "budget_per_h": 10,
+          "threshold": 0.9978598555479739,
+          "test_false_alarms_per_h": 41.27257093723128,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 30100.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 30100.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 60,
+          "threshold": 0.004327332809145441,
+          "test_false_alarms_per_h": 61.90885640584692,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": true,
+              "latency_ms": 5800.000000000001,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 5800.000000000001,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "2-of-3",
+          "budget_per_h": 10,
+          "threshold": 0.9968703651983275,
+          "test_false_alarms_per_h": 30.95442820292346,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 30800.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 30800.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 100.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 60,
+          "threshold": 0.0036012924621940745,
+          "test_false_alarms_per_h": 61.90885640584692,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": true,
+              "latency_ms": 6000.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 6000.0,
+              "alarm_before_onset": true
+            }
+          ]
+        },
+        {
+          "rule": "3-of-5",
+          "budget_per_h": 10,
+          "threshold": 0.9968703651983275,
+          "test_false_alarms_per_h": 30.95442820292346,
+          "test_clean_hours": 0.1938333333333334,
+          "events": [
+            {
+              "name": "correlated_signal_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "correlated_signal_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "fuzzing_attack_3",
+              "detected": true,
+              "latency_ms": 0.0,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3",
+              "detected": true,
+              "latency_ms": 30900.000000000004,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "max_speedometer_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 30900.000000000004,
+              "alarm_before_onset": true
+            },
+            {
+              "name": "reverse_light_off_attack_3",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_off_attack_3_masquerade",
+              "detected": true,
+              "latency_ms": 200.0,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            },
+            {
+              "name": "reverse_light_on_attack_3_masquerade",
+              "detected": false,
+              "latency_ms": NaN,
+              "alarm_before_onset": false
+            }
+          ]
+        }
+      ]
+    ]
+  }
+}
